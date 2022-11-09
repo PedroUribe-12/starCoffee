@@ -1,53 +1,74 @@
 @import '../../../styles.scss';
 
 *{
+    //Asignamos un padding
     padding: 0;
+    //Asignamos un margin
     margin: 0;
+    //Indicamos la medida del elemento
     box-sizing: border-box;
 }
 
 .contenedor_imagen{
+    //Asignamos una posicion relativa
     position: relative;
 
     .imagen-portada{
+        //Modificamos el ancho.
         width: 100%;
+        //Modificamos el largo.
         height: 100vh;
+        //Hacemos énfasis en el centro  a la hora de redimensionarse.
         object-fit: cover;
     }
 }
 
 .contenedor_imagen::before{
     content: "";
+    //Modificamos el ancho.
     width: 100%;
+    //Modificamos el largo.
     height: 100%;
+    //Asignamos una posicion absolute 
     position: absolute;
     top: 0;
     right: 0;
+    //Ponemos to gradiente de izquieda a derecha
     background: linear-gradient(to right, rgba(154, 150, 150, 0.2), rgb(10, 13, 20, 1)99%);
+    //Modificamos la opacidad.
     opacity: 1;
 }
 
 .informacion{
     h1{
+        //Modifica el tamaño de letra.
         font-size: 3em;
+        //Modificamos el color de la letra
         color: $color-secundario;
     }
 
     h2{
+        //Modifica el tamaño de letra.
         font-size: 6em;
+        //Modificamos el color de la letra
         color: $color-terciario;
     }
 
     button{
         background-color: $color-secundario;
+        //Modificamos el color de la letra
         color: $color-terciario;
+        //asignamos un padding 
         padding:.5em 1.2em;
     }
 }
 
+//-------------------- Usamos media query para modificar el tamaño de los titulos  y demás ------------
+
 @media screen and (max-width: 1601px) {
     .informacion{
         h2{
+            //Modifica el tamaño de letra.
             font-size: 5em;
         }
     }
@@ -56,6 +77,7 @@
 @media screen and (max-width: 1333px) {
     .informacion{
         h2{
+            //Modifica el tamaño de letra.
             font-size: 4em;
         }
     }
@@ -66,9 +88,11 @@
     .informacion{
 
         h1{
+            //Modifica el tamaño de letra.
             font-size: 2em;
         }
         h2{
+            //Modifica el tamaño de letra.
             font-size: 2.87em;
         }
     }
@@ -76,11 +100,13 @@
 
 @media screen and (max-width:767px) {
     .contenedor_imagen::before{
+        //Modificamos el linear-gradient para que sea de arriba hacia abajo
         background: linear-gradient( rgba(154, 150, 150, 0.2), rgb(10, 13, 20, 1)99%);
     }
 
     .informacion{
-        align-items: center !important;
+        //alineamos los ítems 
+        align-items: center !important; 
     }
 }
 

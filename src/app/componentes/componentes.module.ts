@@ -10,6 +10,9 @@ import { PortadaComponent } from './portada/portada.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    PortadaComponent
   ]
 })
 export class ComponentesModule { }
