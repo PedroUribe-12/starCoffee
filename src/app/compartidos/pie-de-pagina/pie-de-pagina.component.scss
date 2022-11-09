@@ -1,0 +1,10 @@
+@import '../../../styles.scss';/*importacion del archivo principal de estilos*/
+.footer{
+    background-color:$color-principal ; /*color principal del componente*/
+    .row{
+
+        .pi{
+            color: $color-terciario; /*cambio de color de los iconos*/
+        }
+    }
+}
