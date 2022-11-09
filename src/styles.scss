@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+$color-principal:#0a0d14;
+$color-secundario:#d66b1d;
+$color-terciario:#f7f7f7;
+
+body{
+    background: $color-principal;
+}
