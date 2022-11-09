@@ -1,0 +1,24 @@
+<div class="container-fluid footer">
+    <footer class="py-3 my-4">
+        <div class="row">
+            <div class="col-4">
+                <i class="ms-2 pi pi-facebook"></i>
+                <i class="ms-2 pi pi-instagram"></i>
+                <i class="ms-2 pi pi-twitter" ></i>
+            </div>
+            <div class="col-4 text-center">
+                <img class="img-fluid" src="../../../assets/imagenes/logo-footer.png" width="150" alt="Logo star coffee">
+            </div>
+            <div class="col-4 text-end">
+                <i class="ms-2 pi pi-envelope"></i>
+                <i class="ms-2 pi pi-amazon"></i>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="nav justify-content-center border-top pb-3 mb-3">
+                <li *ngFor="let item of items" class="mx-2 nav-item"><a routerLink="{{item.titulo}}" class="nav-link px-2 text-white">{{item.titulo}}</a></li>
+            </ul>
+        </div>
+        <p class="text-center text-muted">{{copyright}}</p>
+    </footer>
+</div>
