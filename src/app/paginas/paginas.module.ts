@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InicioComponent } from './inicio/inicio.component';
+import { ComponentesModule } from '../componentes/componentes.module';
 
 
 
@@ -9,7 +10,8 @@ import { InicioComponent } from './inicio/inicio.component';
     InicioComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ComponentesModule
   ]
 })
 export class PaginasModule { }
