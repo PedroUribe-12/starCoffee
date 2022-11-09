@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { PieDePaginaComponent } from './pie-de-pagina/pie-de-pagina.component';
 import { RouterModule } from '@angular/router';
 
-
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
-    PieDePaginaComponent
+    PieDePaginaComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,
