@@ -7,6 +7,7 @@
     position: fixed;
     width: 100%;
     transition: .10s;
+    z-index: 100;
 }
 /*Se agrega la clase del efecto scroll*/
 header.abajo{

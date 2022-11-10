@@ -15,7 +15,8 @@ import { MenuComponent } from './menu/menu.component';
     RouterModule
   ],
   exports:[
-    PieDePaginaComponent
+    PieDePaginaComponent,
+    MenuComponent
   ]
 })
 export class CompartidosModule { }
