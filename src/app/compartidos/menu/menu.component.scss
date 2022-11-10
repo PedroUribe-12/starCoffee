@@ -137,7 +137,7 @@ la linea por el tecto*/
         
     
     }
-    //Segumos usando efecto sc
+    //Seguimos usando efecto scroll comoe n la version no reposiva */ 
     header.abajo{
         background: #0A0D14;
         height: 55px;
@@ -146,16 +146,23 @@ la linea por el tecto*/
         
     }
 
-
+    /*La clase hara que el menu al ser desplegable, se pueda hacer
+    scrol en el si en necesario*/
     .nav_cafe{
-        display: flex;
-        justify-content: space-between;
+       
         overflow-y: auto;
     }
+
+    /*Le asiganmos un nuevo tamaño al logo del menu, cuando sea responsivo*/
     .logo{
         height: 55px;
         padding: 5px 0;
     }
+    /*Esta clase va a:
+    *Al ordenar los items del menu en columna
+    *Al ser responsivo los items se van a mostrar desde arriba hacia abajo
+    *caudno se muestren se van a mostrar los itemes con un fondo de color
+    *al usar metodo toggle el munu no se va a mostrar hasta hacer click en el boton hamburguesa*/
     .nav_menu{
         flex-direction: column;
         margin: 0;
@@ -163,21 +170,31 @@ la linea por el tecto*/
         background: #282c35;
         display: flex;
         position: fixed;
+        //usamos top para que la lista se quede junta con el nav al ser columnas.
         top: 55px;
         width: 100%;
        text-align: center;
        height: calc(100% - 70px);
        padding: 0;
+       //usamos left para no mostrar el nav_menu
        left: 100%;
        transition: .2s;
     }
+
+    /*Esta clase va a:
+    *Al ordenar los items del menu en columna
+    *Al ser responsivo los items se van a mostrar desde arriba hacia abajo
+    *caudno se muestren se van a mostrar los itemes con un fondo de color
+    *al usar metodo toggle el munu no se va a mostrar hasta hacer click en el boton hamburguesa*/
     .nav_administracion{
+        
         flex-direction: column;
         margin: 0;
         list-style: none;
         background: #282c35;
         padding: 0;
         position: fixed;
+        //usamos top para que la lista se quede juntacnon el nav_menu al ser columnas.
         top: 415px;
         width: 100%;
         text-align: center;
@@ -190,16 +207,19 @@ la linea por el tecto*/
         al hacer esto dejam,os el logo en la esquina*/
         order: -1;
     }
+    //cambiamos el tamaño de la letra y le sacamos sus margenes
     .nav_links{
         font-size: 18px;
         margin: 0;
         
         line-height: 90px;
         text-transform: uppercase;
-        color: #D66B1D;
+       
         text-decoration: none;
         transition: .5s;
     }
+    /*Iniciamosv los estilos que se van a mostrar cuando los items sean responsivos*/
+    //estilos pedredefinido al no ser seleccionados
     .nav_link_estilo {
         color: #D66B1D;
         text-transform: uppercase;
@@ -207,8 +227,11 @@ la linea por el tecto*/
        
         
         
-        position: relative;
+       
     }
+
+    /*Estilo de los items al ser seleccionados:
+    Al ser seleccionado el color del fondo cambiara y el de las letras tambein*/
     .nav_links:hover {
         background: #D66B1D;
        
@@ -216,14 +239,12 @@ la linea por el tecto*/
             color: #282c35;
         }
     }
+    //las lines del los itmes desaparecen al ser responsivas
     .nav_link_estilo:after {    
-        
-        
-        
         display:none;
         
     }
-    /*boton de iniciar sesion responsive */
+    /*boton de iniciar sesion predeterminado al ser responsivo*/
     .nav_resposive_btn{
         background: #D66B1D;
         color: #0A0D14;
@@ -243,6 +264,7 @@ la linea por el tecto*/
         }
     }
     
+    //bonot al ser seleccionado
     .nav_resposive_btn:hover{
         background: #282c35;
         color: #D66B1D;
@@ -256,7 +278,7 @@ la linea por el tecto*/
     }
     /* estilo para que se muestre el menu hamburguesa */
     .nav_toggle{
- 
+        
         color: #D66B1D;
         background: none;
         font-size: 30px;
@@ -266,7 +288,8 @@ la linea por el tecto*/
         border: none;
         
     }
-   
+   /*Esta clase va a ser usada en el momento en el que hagmos click en el boton toggle/hamburguesa
+   Lo que desplazara los items en columnas*/
     .nav_menu_visible{
         left: 0;
         transition: .2s;
@@ -276,9 +299,3 @@ la linea por el tecto*/
     }
 }
 
-@media screen and (max-height: 300px) {
-      ul {
-          margin-top: 40px;
-      }
-}
-  
