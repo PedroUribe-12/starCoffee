@@ -3,8 +3,9 @@
     background-color:$color-principal ; /*color principal del componente*/
     .row{
 
-        .pi{
+        .icono__footer{
             color: $color-terciario; /*cambio de color de los iconos*/
+            font-size: 1.3rem;
         }
     }
 }
