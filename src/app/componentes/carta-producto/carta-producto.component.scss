@@ -1,14 +1,18 @@
+@import '../../../styles.scss';/*importacion del archivo principal de estilos*/
 .carta {
-  width: 300px;
-  min-height: 488px;
-  background: #11141B;
+  transition: 500ms;
+  align-items: center;
+  background: #25272D;
   border-radius: 25px;
+  max-height: 500px;
  .img__carta{
+    transition: 500ms;
     left: 6.57%;
     right: 6.57%;
     top: 2.66%;
     bottom: 45.49%;
     border-radius: 25px;
+    width: 80%;
  }
   .texto__carta {
     left: 6.57%;
@@ -30,6 +34,26 @@
     right: 23.45%;
     top: 72.13%;
     bottom: 22.34%;
-    color: #ffffff;
   }
+  .btn{
+    background-color: $color-secundario;
+    border-radius: 40px;
+    width: 80%;
+  }
+}
+.carta:hover{
+  transition: 500ms;
+  transform: translateY(20px);
+  .img__carta{
+    transition: 500ms;
+    transform:translateY(-50px)
+    scale(1.1)
+  }
+}
+.carta .btn{
+  color: #ffffff;
+}
+.carta .btn:hover{
+  background-color: $color-terciario;
+  color: $color-principal;
 }

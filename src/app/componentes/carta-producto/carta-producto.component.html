@@ -1,10 +1,13 @@
 <div class="container-fluid mt-5">
-    <div class="card carta" style="width: 18rem;">
+    <div class="card carta" style="max-width: 18rem;">
         <img src="../../../assets/imagenes/Cappuccino.png" class="card-img-top img-fluid img__carta" alt="...">
-        <div class="card-body">
-        <h5 class="card-title texto__carta">Cappuccino</h5>
-        <p class="card-text estrellas__carta"><i class="fa-solid fa-star mx-2"></i></p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="card-body text-center">
+            <h5 class="card-title texto__carta h1">Cappuccino</h5>
+            <p class="card-text estrellas__carta text-center">
+                <p-rating [ngModel]="puntuacion" [readonly]="true" [cancel]="false" iconOnClass="fa-solid fa-star estrella__on text-white" iconOffClass="fa-solid fa-star ">
+                </p-rating>
+            </p>
+            <a href="#" class="btn">Ver ingredientes</a>
         </div>
     </div>
 </div>
