@@ -4,22 +4,27 @@ import { PortadaComponent } from './portada/portada.component';
 import { CartaProductoComponent } from './carta-producto/carta-producto.component';
 import {RatingModule} from 'primeng/rating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CarruselDeCartasComponent } from './carrusel-de-cartas/carrusel-de-cartas.component';
+import {CarouselModule} from 'primeng/carousel';
 
 
 
 @NgModule({
   declarations: [
     PortadaComponent,
-    CartaProductoComponent
+    CartaProductoComponent,
+    CarruselDeCartasComponent
   ],
   imports: [
     CommonModule,
     RatingModule,
-    FormsModule
+    FormsModule,
+    CarouselModule
   ],
   exports:[
     PortadaComponent,
-    CartaProductoComponent
+    CartaProductoComponent,
+    CarruselDeCartasComponent
   ]
 })
 export class ComponentesModule { }
