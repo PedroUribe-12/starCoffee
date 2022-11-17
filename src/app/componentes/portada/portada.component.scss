@@ -52,6 +52,7 @@
         font-size: 6em;
         //Modificamos el color de la letra
         color: $color-terciario;
+        //Modificamos su ancho
     }
 
     button{
@@ -96,7 +97,7 @@
             font-size: 2.87em;
         }
     }
-}
+} 
 
 @media screen and (max-width:767px) {
     .contenedor_imagen::before{
@@ -107,6 +108,14 @@
     .informacion{
         //alineamos los ítems 
         align-items: center !important; 
+        h1{
+            //Modifica el tamaño de letra.
+            font-size: 2em;
+        }
+        h2{
+            //Modifica el tamaño de letra.
+            font-size: 2.87em;
+        }
     }
 }
 

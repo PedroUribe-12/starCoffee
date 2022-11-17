@@ -1,0 +1,91 @@
+@import '../../../styles.scss';
+
+.imagen{
+    height: 100vh;
+    width: 65%;
+    object-fit: cover;
+    opacity: .8;
+}
+
+.informacion{
+    position: absolute;
+    color: white;
+    padding-left: 10em;
+
+    h1{
+        //Modifica el tamaño de letra.
+        font-size: 3em;
+        //Modificamos el color de la letra
+        color: $color-secundario;
+    }
+
+    h2{
+        //Modifica el tamaño de letra.
+        font-size: 6em;
+        //Modificamos el color de la letra
+        color: $color-terciario;
+        width: 50%;
+    }
+
+    p{
+        font-size: 1.2em;
+        width: 30%;
+    }
+}
+
+
+@media screen and (max-width: 1333px) {
+    .informacion{
+
+        padding-left: 7em;
+
+        h2{
+            //Modifica el tamaño de letra.
+            font-size: 3.9em;
+            width: 60%;
+        }
+
+        p{
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width:1067px) {
+    .informacion{
+        padding-left: 6em;
+    }
+}  
+
+@media screen and (max-width:1027px) {
+    .imagen{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .informacion{
+
+        padding: 0 1em;
+
+        h1{
+            //Modifica el tamaño de letra.
+            font-size: 3em;
+            //Modificamos el color de la letra
+            color: $color-secundario;
+        }
+    
+        h2{
+            //Modifica el tamaño de letra.
+            font-size: 4em;
+            //Modificamos el color de la letra
+            color: $color-terciario;
+            width: 100%;
+        }
+    
+        p{
+            font-size: 1em;
+            width: 100%;
+        }
+    }
+}

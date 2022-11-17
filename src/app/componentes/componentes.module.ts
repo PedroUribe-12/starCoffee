@@ -12,6 +12,7 @@ import { PortadaComponent } from './portada/portada.component';
     CommonModule
   ],
   exports:[
+    //Exportamos el componente
     PortadaComponent
   ]
 })
