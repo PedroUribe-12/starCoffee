@@ -1,11 +1,11 @@
 <!--Carta que sera usada para todos los productos que ofrece la pagina-->
-<div class="card carta m-3" style="max-width: 20rem;">
+<div class="card carta m-3 mt-5" style="max-width: 20rem;">
     <!---->
     <img src="{{imagenProducto}}" class="card-img-top img-fluid img__carta" [alt]="nombreProducto">
         <!---->
     <div class="card-body text-center">
         <h5 class="card-title texto__carta h1">{{nombreProducto}}</h5>
-        <!-- Seccion de puntuacion del produccto-->
+        <!-- Seccion de puntuacion del producto-->
         <p class="card-text estrellas__carta text-center">
             <p-rating [ngModel]="puntuacionProducto" [readonly]="true" [cancel]="false"
                 iconOnClass="fa-solid fa-star estrella__on text-white" iconOffClass="fa-solid fa-star ">

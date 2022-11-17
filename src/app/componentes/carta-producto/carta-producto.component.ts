@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CartaProductoComponent implements OnInit {
   lectura=true
-  puntuacion= 3;
+  //Variables que le brindara el componente padre
   @Input() nombreProducto!:string;
   @Input() imagenProducto!:string;
   @Input() puntuacionProducto!:string;
