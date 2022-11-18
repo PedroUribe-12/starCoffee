@@ -1,0 +1,35 @@
+@import "../../../styles.scss";
+.contenedor__evento{
+    padding-left: 8%;
+    padding-right: 8%;
+}
+.titulo__seccion{
+    //Modifica el tamaño de letra.
+    font-size: 3em;
+    //Modificamos el color de la letra
+    color: $color-secundario;
+}
+.titulo{
+    font-size: 4em;
+}
+.img__evento{
+    object-fit: cover;
+    max-height:75vh;
+    border-radius: 20px;
+}
+.texto__evento {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color:$color-terciario ;
+}
+@media screen and (max-width: 990px) {
+    .img__evento{
+        height: 100vh;
+    }
+}
+@media screen and (max-width: 576px) {
+    .img__evento{
+        height: 50vh;
+    }
+}
