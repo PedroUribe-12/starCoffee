@@ -1,0 +1,68 @@
+@import '../../../styles.scss';/*importacion del archivo principal de estilos*/
+.carta {
+  transition: 500ms;
+  align-items: center;
+  background: #25272D;
+  border-radius: 25px;
+  max-height: 500px;
+ .img__carta{
+    transition: 500ms;
+    //posicionamiento por defecto de la imagen
+    left: 6.57%;
+    right: 6.57%;
+    top: 2.66%;
+    bottom: 45.49%;
+    border-radius: 25px;
+    width: 80%;
+ }
+  .texto__carta {
+    //posicionamiento del texto
+    left: 6.57%;
+    right: 6.57%;
+    top: 54.51%;
+    bottom: 31.15%;
+    //Fuentes, tamaño y posicionamiento del texto
+    font-family: "Caudex";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 62px;
+    text-align: center;
+
+    color: #ffffff;
+  }
+  .estrellas__carta{
+    //posicionamiento de las estrellas de la carta
+    left: 23.71%;
+    right: 23.45%;
+    top: 72.13%;
+    bottom: 22.34%;
+  }
+  .btn{
+    //Definicion de colores y forma del boton
+    background-color: $color-secundario;
+    border-radius: 40px;
+    width: 90%;
+  }
+}
+//Estilos que se activan cuando el mouse pasa por encima del componente
+.carta:hover{
+  //transicion y movimiento de la carta
+  transition: 500ms;
+  transform: translateY(20px);
+  .img__carta{
+    //Cambio de tamaño, posicion con una trancision
+    transition: 500ms;
+    transform:translateY(-50px)
+    scale(1.14)
+  }
+}
+.carta .btn{
+  //color del texto del boton
+  color: #ffffff;
+}
+//Estilos que se activan cuando el mouse pasa por encima del componente
+.carta .btn:hover{
+  background-color: $color-terciario;
+  color: $color-principal;
+}
