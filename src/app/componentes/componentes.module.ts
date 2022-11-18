@@ -6,6 +6,7 @@ import {RatingModule} from 'primeng/rating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarruselDeCartasComponent } from './carrusel-de-cartas/carrusel-de-cartas.component';
 import {CarouselModule} from 'primeng/carousel';
+import { EventoComponent } from './evento/evento.component';
 
 
 
@@ -13,7 +14,8 @@ import {CarouselModule} from 'primeng/carousel';
   declarations: [
     PortadaComponent,
     CartaProductoComponent,
-    CarruselDeCartasComponent
+    CarruselDeCartasComponent,
+    EventoComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import {CarouselModule} from 'primeng/carousel';
   exports:[
     PortadaComponent,
     CartaProductoComponent,
-    CarruselDeCartasComponent
+    CarruselDeCartasComponent,
+    EventoComponent
   ]
 })
 export class ComponentesModule { }

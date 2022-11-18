@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+.contenedor__evento{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.titulo{
+    font-size: 5em;
+}
+.img__evento{
+    object-fit: cover;
+    max-height:75vh;
+    border-radius: 20px;
+}
+.texto__evento {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color:$color-terciario ;
+}

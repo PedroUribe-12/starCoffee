@@ -12,8 +12,8 @@ import { CompartidosModule } from './compartidos/compartidos.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PaginasModule,
-    CompartidosModule
+    CompartidosModule,
+    PaginasModule
   ],
   providers: [],
   bootstrap: [AppComponent]
