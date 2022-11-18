@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortadaComponent } from './portada/portada.component';
+import { Seccion2Component } from './seccion2/seccion2.component';
 
 
 
 @NgModule({
   declarations: [
-    PortadaComponent
+    PortadaComponent,
+    Seccion2Component
   ],
   imports: [
     CommonModule
   ],
   exports:[
-    PortadaComponent
+    //Exportamos los componentes
+    PortadaComponent,
+    Seccion2Component
   ]
 })
 export class ComponentesModule { }
