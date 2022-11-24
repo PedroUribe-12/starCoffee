@@ -1,8 +1,9 @@
 <!--Carta que sera usada para todos los productos que ofrece la pagina-->
-<div class="card carta m-3 mt-5" style="max-width: 20rem;">
+<div class="card carta m-3 my-5" style="max-width: 20rem;">
+    <div class="img__cuerpo">
+        <img src="{{imagenProducto}}" class="card-img-top img-fluid img__carta" [alt]="nombreProducto">
+    </div>
     <!---->
-    <img src="{{imagenProducto}}" class="card-img-top img-fluid img__carta" [alt]="nombreProducto">
-        <!---->
     <div class="card-body text-center">
         <h5 class="card-title texto__carta h1">{{nombreProducto}}</h5>
         <!-- Seccion de puntuacion del producto-->

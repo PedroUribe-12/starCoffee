@@ -10,26 +10,38 @@
     color: $color-secundario;
 }
 .titulo{
-    font-size: 4em;
+    font-size: 6em;
 }
 .img__evento{
     object-fit: cover;
-    max-height:75vh;
+    max-height:80vh;
     border-radius: 20px;
 }
 .texto__evento {
     display: flex;
-    align-items: center;
     flex-direction: column;
     color:$color-terciario ;
 }
-@media screen and (max-width: 990px) {
-    .img__evento{
-        height: 100vh;
+@media screen and (max-width: 1366px) {
+    .titulo{
+        font-size: 3.9em;
     }
 }
+@media screen and (max-width: 990px) {
+    .img__evento{
+        height: 40vh;
+    }
+}
+@media screen and (max-width:767px) {
+    .titulo{
+        font-size: 4em ;
+    }
+}
+
 @media screen and (max-width: 576px) {
     .img__evento{
-        height: 50vh;
+        height: 40vh;
+        width: 100%;
+        margin: 0.5em 0 0.5em 0;
     }
 }

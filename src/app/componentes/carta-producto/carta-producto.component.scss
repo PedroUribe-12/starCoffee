@@ -4,7 +4,13 @@
   align-items: center;
   background: #25272D;
   border-radius: 25px;
-  max-height: 500px;
+  height: 25rem;
+  .img__cuerpo{
+    height: 55%;
+  }
+  .card-body{
+    padding: 0;
+  }
  .img__carta{
     transition: 500ms;
     //posicionamiento por defecto de la imagen
@@ -49,11 +55,12 @@
 .carta:hover{
   //transicion y movimiento de la carta
   transition: 500ms;
-  transform: translateY(20px);
+  height: 25.5rem;
+  transform: translateY(-0.5rem);
   .img__carta{
     //Cambio de tamaño, posicion con una trancision
     transition: 500ms;
-    transform:translateY(-50px)
+    transform:translateY(-40px)
     scale(1.14)
   }
 }
