@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarruselDeCartasComponent } from './carrusel-de-cartas/carrusel-de-cartas.component';
 import {CarouselModule} from 'primeng/carousel';
 import { Seccion2Component } from './seccion2/seccion2.component';
+import { GaleriaComponent } from './galeria/galeria.component';
 
 
 
@@ -17,7 +18,8 @@ import { Seccion2Component } from './seccion2/seccion2.component';
     PortadaComponent,
     CartaProductoComponent,
     CarruselDeCartasComponent,
-    Seccion2Component
+    Seccion2Component,
+    GaleriaComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { Seccion2Component } from './seccion2/seccion2.component';
     CartaProductoComponent,
     CarruselDeCartasComponent,
     PortadaComponent,
-    Seccion2Component
+    Seccion2Component,
+    GaleriaComponent
   ]
 })
 export class ComponentesModule { }

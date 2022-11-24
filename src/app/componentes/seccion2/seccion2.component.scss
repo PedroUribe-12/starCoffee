@@ -1,6 +1,15 @@
 //importamos los colores de la pagina desde el style
 @import '../../../styles.scss';
 
+*{
+    //Asignamos un padding
+    padding: 0;
+    //Asignamos un margin
+    margin: 0;
+    //Indicamos la medida del elemento
+    box-sizing: border-box;
+}   
+
 .imagen{
     //Modificamos el largo.
     height: 100vh;
@@ -11,7 +20,6 @@
     //Modificamos la opacidad.
     opacity: .8;
 }
-
 
 .informacion{
     //asignamos una posición.
@@ -124,6 +132,33 @@
         h2{
             //Modifica el tamaño de letra.
             font-size: 4em;
+        }
+    }
+} 
+
+@media screen and (max-width:400px) {
+    .informacion{
+        h1{
+            //Modifica el tamaño de letra.
+            font-size: 2em;
+            //Modificamos el color de la letra
+            color: $color-secundario;
+        }
+    
+        h2{
+            //Modifica el tamaño de letra.
+            font-size: 3em;
+            //Modificamos el color de la letra
+            color: $color-terciario;
+            //Modificamos el ancho.
+            width: 100%;
+        }
+    
+        p{
+            //Modificamos el tamaño de letra.
+            font-size: 1em;
+            //Modificamos el ancho.
+            width: 100%;
         }
     }
 } 
