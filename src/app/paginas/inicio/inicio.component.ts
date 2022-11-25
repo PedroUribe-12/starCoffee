@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class InicioComponent implements OnInit {
 
   //datos que le van a dar a un componente que esta usando input
-    titulo1:string="comidas"
+    titulo1:string="Comidas"
     eslogan1:string="Disfruto las mañanas con cafe"
     imagen1:string='../../../assets/imagenes/medialunas.jpg'
   //datos que le van a dar a un componente que esta usando input

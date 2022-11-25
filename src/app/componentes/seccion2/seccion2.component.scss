@@ -1,6 +1,11 @@
 //importamos los colores de la pagina desde el style
 @import '../../../styles.scss';
 
+*{
+    padding: 0;
+    margin: 0;
+}
+
 .imagen{
     //Modificamos el largo.
     height: 100vh;

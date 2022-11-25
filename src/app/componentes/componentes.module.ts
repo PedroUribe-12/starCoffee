@@ -13,9 +13,6 @@ import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
 
 
-
-
-
 @NgModule({
   declarations: [
     PortadaComponent,
@@ -39,7 +36,7 @@ import { EventoComponent } from './evento/evento.component';
     CarruselDeCartasComponent,
     PortadaComponent,
     Seccion2Component,
-    SeccionesComponent
+    SeccionesComponent,
     HistoriaComponent,
     EventoComponent
   ]

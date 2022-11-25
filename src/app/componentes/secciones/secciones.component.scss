@@ -1,3 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
 
 .secion{
     background: #0a0d14;
@@ -9,36 +14,24 @@
 }
 .informacion{
     position: absolute;
-    padding-right: 6em;
+    padding-right: 10em;
 }
 
 .texto{
-    width: 350px;
-    
+    width: 25em;
 }
 h5{
-    font-family: 'Cookie';
     font-style: normal;
     font-weight: 400;
     font-size: 5.5em;
     line-height: 78px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
     color: #D66B1D;
 }
 p{
-    font-family: 'Fjalla One';
     font-style: normal;
     font-weight: 400;
     font-size: 3.75em;
     line-height: 60px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-
     color: #FFFFFF;
 }
 
@@ -56,16 +49,11 @@ p{
         height: 50vh;
     }
     .informacion{
-        
-        text-align: none;
         padding-right: 0;
         //alineamos los ítems
-        align-items: none;
         //Especificamos como el se colocan los elementos
-        flex-direction: none;
-    }
-    .resposivo{
-        justify-content: none;
+        flex-direction: column;
+        text-align: center;
     }
     .texto{
         place-self: center;
