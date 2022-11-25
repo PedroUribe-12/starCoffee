@@ -9,6 +9,8 @@ import { CarruselDeCartasComponent } from './carrusel-de-cartas/carrusel-de-cart
 import {CarouselModule} from 'primeng/carousel';
 import { Seccion2Component } from './seccion2/seccion2.component';
 import { HistoriaComponent } from './historia/historia.component';
+import { EventoComponent } from './evento/evento.component';
+
 
 
 
@@ -19,7 +21,8 @@ import { HistoriaComponent } from './historia/historia.component';
     CartaProductoComponent,
     CarruselDeCartasComponent,
     Seccion2Component,
-    HistoriaComponent
+    HistoriaComponent,
+    EventoComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +37,8 @@ import { HistoriaComponent } from './historia/historia.component';
     CarruselDeCartasComponent,
     PortadaComponent,
     Seccion2Component,
-    HistoriaComponent
+    HistoriaComponent,
+    EventoComponent
   ]
 })
 export class ComponentesModule { }
