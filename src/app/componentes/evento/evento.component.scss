@@ -1,0 +1,64 @@
+@import "../../../styles.scss";
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor__evento{
+    padding-left: 8%;
+    padding-right: 8%;
+}
+.titulo__seccion{
+    //Modifica el tamaño de letra.
+    font-size: 3em;
+    //Modificamos el color de la letra
+    color: $color-secundario;
+}
+.titulo{
+    //tamaño de los titulos
+    font-size: 6em;
+}
+.img__evento{
+    //Definimos un tamaño maximo; Bordes redondeados
+    object-fit: cover;
+    max-height:80vh;
+    border-radius: 20px;
+}
+.texto__evento {
+    //Posicionamos el texto y definimos el color
+    display: flex;
+    flex-direction: column;
+    color:$color-terciario ;
+}
+@media screen and (max-width: 1366px) {
+    .titulo{
+        //Cambio de tamaño del titulo cuando la pantalla se achica
+        font-size: 3.9em;
+    } 
+}
+@media screen and (max-width: 990px) {
+    .img__evento{
+        //Cambio de la altura de las imagenes de evento
+        height: 40vh;
+    }
+}
+@media screen and (max-width:767px) {
+    //Cambio de tamaño del titulo cuando la pantalla se achica
+    .titulo{
+        font-size: 4em;
+    }
+    //Cambio del ancho de las imagenes de evento
+    .img__evento{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    //Cambio del ancho y altura de las imagenes de evento
+    .img__evento{
+        height: 40vh;
+        width: 100%;
+        margin: 0.5em 0 0.5em 0;
+    }
+}

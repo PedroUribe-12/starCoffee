@@ -1,7 +1,8 @@
 <div class="container-fluid text-center my-3">
+    <!--Uso del componente carrusel de prime-->
     <p-carousel [showIndicators]="false" contentClass="text-center" [value]="productos" [autoplayInterval]="3000" [circular]="true" [numVisible]="4" [numScroll]="1" [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header">
-            <h5 class="text-white h1">Productos Destacados</h5>
+            <h5 class="titulo__seccion">Productos Destacados</h5>
         </ng-template>
         <ng-template let-producto pTemplate="item" >
             <app-carta-producto nombreProducto="{{producto.nombre}}" imagenProducto="{{producto.imagen}}"

@@ -9,8 +9,9 @@ import { CarruselDeCartasComponent } from './carrusel-de-cartas/carrusel-de-cart
 import {CarouselModule} from 'primeng/carousel';
 import { Seccion2Component } from './seccion2/seccion2.component';
 import { GaleriaComponent } from './galeria/galeria.component';
-
-
+import { SeccionesComponent } from './secciones/secciones.component';
+import { HistoriaComponent } from './historia/historia.component';
+import { EventoComponent } from './evento/evento.component';
 
 
 @NgModule({
@@ -20,6 +21,9 @@ import { GaleriaComponent } from './galeria/galeria.component';
     CarruselDeCartasComponent,
     Seccion2Component,
     GaleriaComponent,
+    SeccionesComponent,
+    HistoriaComponent,
+    EventoComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +38,10 @@ import { GaleriaComponent } from './galeria/galeria.component';
     CarruselDeCartasComponent,
     PortadaComponent,
     Seccion2Component,
-    GaleriaComponent
+    GaleriaComponent,
+    SeccionesComponent,
+    HistoriaComponent,
+    EventoComponent
   ]
 })
 export class ComponentesModule { }
