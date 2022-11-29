@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 
@@ -14,12 +15,13 @@
 }
 .informacion{
     position: absolute;
-    padding-right: 10em;
+    padding-right: 5%;
 }
 
 .texto{
-    width: 25em;
+    width: 35%;
 }
+
 h5{
     font-style: normal;
     font-weight: 400;
@@ -57,6 +59,7 @@ p{
     }
     .texto{
         place-self: center;
+        width: 100%;
     }
     h5{
        

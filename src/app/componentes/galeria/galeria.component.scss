@@ -1,23 +1,33 @@
 @import '../../../styles.scss';
 
 *{
+    //asignamos un padding  
     padding: 0;
+    //Asignamos un margin
     margin: 0;
+    //Indicamos la medida del elemento
     box-sizing: border-box;
 }
 
 img{
+    //Modificamos el ancho.
     width: 100%;
+    //Hace énfasis en el centro a la hora de redimensionarse.
     object-fit: cover;
+    //asignamos un padding  
     padding: 3px;
 }
 
 .container-fluid{
     .row{
+
         .titulo{
             h2{
-                color: $color-terciario;
+                //modificamos el color de la letra.
+                color: $color-secundario;
+                //Modificamos el ancho de la letra.
                 font-weight: 500;
+                //Modificamos el tamaño de letra.
                 font-size: 3em;
             }
         }
@@ -25,20 +35,24 @@ img{
         .col-md-6{
             
             .imagen-1{
+                //Modificamos el largo.
                 height: 40em;
             }
 
             .row{
 
                 .imagen-2{
+                    //Modificamos el largo.
                     height: 20em;
                 }
 
                 .imagen-3{
+                    //Modificamos el largo.
                     height: 20em;
                 } 
 
                 .imagen-1{
+                    //Modificamos el largo.
                     height: 40em;
                 }
                 
@@ -53,6 +67,7 @@ img{
             .col-md-6{
 
                 .imagen-1{
+                    //Modificamos el largo.
                     height: 30em;
                 }
                 
@@ -60,14 +75,17 @@ img{
                 .row{
 
                     .imagen-2{
+                        //Modificamos el largo.
                         height: 30em;
                     }
             
                     .imagen-3{
+                        //Modificamos el display para que no se vea
                         display: none;
                     } 
             
                     .imagen-1{
+                        //Modificamos el largo.
                         height: 30em;
                     } 
                    
