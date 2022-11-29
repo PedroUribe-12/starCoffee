@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarruselDeCartasComponent } from './carrusel-de-cartas/carrusel-de-cartas.component';
 import {CarouselModule} from 'primeng/carousel';
 import { Seccion2Component } from './seccion2/seccion2.component';
+import { GaleriaComponent } from './galeria/galeria.component';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
@@ -19,6 +20,7 @@ import { EventoComponent } from './evento/evento.component';
     CartaProductoComponent,
     CarruselDeCartasComponent,
     Seccion2Component,
+    GaleriaComponent,
     SeccionesComponent,
     HistoriaComponent,
     EventoComponent
@@ -36,6 +38,7 @@ import { EventoComponent } from './evento/evento.component';
     CarruselDeCartasComponent,
     PortadaComponent,
     Seccion2Component,
+    GaleriaComponent,
     SeccionesComponent,
     HistoriaComponent,
     EventoComponent
