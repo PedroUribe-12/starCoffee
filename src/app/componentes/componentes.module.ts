@@ -18,6 +18,9 @@ import { environment } from 'src/environments/environment';
 import { ProductosService } from '../servicios/productos.service';
 import { EventoService } from '../servicios/evento.service';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+
+import {ButtonModule} from 'primeng/button';
+
 @NgModule({
   declarations: [
     PortadaComponent,
@@ -35,7 +38,8 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
     RatingModule,
     FormsModule,
     CarouselModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    ButtonModule
   ],
   exports:[
   //Exportamos los componentes

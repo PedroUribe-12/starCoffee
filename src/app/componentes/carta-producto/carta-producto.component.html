@@ -1,18 +1,32 @@
 <!--Carta que sera usada para todos los productos que ofrece la pagina-->
-<div class="card carta m-3 my-5" style="max-width: 20rem;">
-    <div class="img__cuerpo">
-        <img src="{{imagenProducto}}" class="card-img-top img-fluid img__carta" [alt]="nombreProducto">
+<div class="container-fluid">
+    
+    <div class="card carta m-3 my-5" style="max-width: 20rem;">
+        <div class="img__cuerpo">
+            <img src="{{imagenProducto}}" class="card-img-top img-fluid img__carta" [alt]="nombreProducto">
+        </div>
+        <!---->
+        <div class="card-body text-center">
+            <h5 class="card-title texto__carta h1">{{nombreProducto}}</h5>
+            <!-- Seccion de puntuacion del producto-->
+            <p class="card-text estrellas__carta text-center">
+                <p-rating [ngModel]="puntuacionProducto" [readonly]="true" [cancel]="false"
+                    iconOnClass="fa-solid fa-star estrella__on text-white" iconOffClass="fa-solid fa-star ">
+                </p-rating>
+            </p>
+            <!--Boton que llama a una accion-->
+            <a *ngIf="usuario" href="#" class="btn">Ver ingredientes</a>
+            <div class="row" *ngIf="admin">
+                <div class="col">
+                    <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-success"></button>
+        
+                </div>
+                <div class="col">
+                    <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-success"></button>
+                </div>
+            </div>
+        </div>
+      
     </div>
-    <!---->
-    <div class="card-body text-center">
-        <h5 class="card-title texto__carta h1">{{nombreProducto}}</h5>
-        <!-- Seccion de puntuacion del producto-->
-        <p class="card-text estrellas__carta text-center">
-            <p-rating [ngModel]="puntuacionProducto" [readonly]="true" [cancel]="false"
-                iconOnClass="fa-solid fa-star estrella__on text-white" iconOffClass="fa-solid fa-star ">
-            </p-rating>
-        </p>
-        <!--Boton que llama a una accion-->
-        <a href="#" class="btn">Ver ingredientes</a>
-    </div>
+
 </div>

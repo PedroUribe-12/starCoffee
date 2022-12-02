@@ -6,7 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./carta-producto.component.scss']
 })
 export class CartaProductoComponent implements OnInit {
-  lectura=true
+  usuario=true;
+  lectura=true;
+  admin=false;
   //Variables que le brindara el componente padre
   @Input() nombreProducto!:string;
   @Input() imagenProducto!:string;

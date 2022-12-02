@@ -63,6 +63,10 @@
         //asignamos un padding 
         padding:.5em 1.2em;
     }
+    .btn:hover{
+        background-color: $color-terciario;
+        color: $color-principal;
+      }
 }
 
 //-------------------- Usamos media query para modificar el tamaño de los titulos  y demás ------------
