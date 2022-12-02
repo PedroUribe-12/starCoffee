@@ -16,6 +16,7 @@ export class SeccionesComponent implements OnInit {
   @Input() tiuloSeccion:string | undefined
   @Input() esloganSeccion:string | undefined
   @Input() imagenSeccion:string | undefined
+  @Input() editar:(edit:string)=>void
 
   //creamos el controlador del formulario
   actualizarSeccion= new FormGroup({
@@ -26,7 +27,21 @@ export class SeccionesComponent implements OnInit {
   seccionSeleccionada!: Seccion1 | Seccion3;
   constructor(private servicioSeccion1:Seccion1Service, private servicioSeccion3:Seccion3Service) { }
 
+  //declaramos las interfaces
+  secciones1!: Seccion1[];
+  secciones3!: Seccion3[];
   ngOnInit(): void {
+     //llamamos el metodo "getSeccion1" del servicio Seccion1Service
+     this.servicioSeccion1.getSeccion1().subscribe(seccion1=>{
+      this.secciones1= seccion1
+      
+     
+    })
+    //llamamos el metodo "getSeccion3" del servicio Seccion3Service
+    this.servicioSeccion3.getSeccion3().subscribe(seccion3=>{
+      this.secciones3= seccion3
+     
+    })
   }
   
   displayModal: boolean=false;
@@ -40,7 +55,8 @@ export class SeccionesComponent implements OnInit {
     this.displayModal = true;
     this.actualizarSeccion.setValue({
       titulo: seccionSeleccionada.titulo,
-      descripcion: seccionSeleccionada.descripcion
+      descripcion: seccionSeleccionada.descripcion,
+      
     })
     
   }
@@ -81,4 +97,5 @@ export class SeccionesComponent implements OnInit {
   }
 
 
+  
 }

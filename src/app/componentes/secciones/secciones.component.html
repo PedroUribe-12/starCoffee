@@ -25,7 +25,7 @@
             <div class="texto">
                 <h5>{{tiuloSeccion}}</h5>
                 <p>{{esloganSeccion}}</p>
-                <!-- <button pButton pRipple type="button" class="p-button-rounded p-button-warning" (click)="showModalDialog()" ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i></button> -->
+                <button pButton pRipple type="button" class="p-button-rounded p-button-warning"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i></button>
                
 
                 
@@ -49,7 +49,17 @@
                             <p-button icon="pi pi-times" (click)="displayModal=false" label="No"></p-button>
                         </ng-template>
                 </p-dialog>
-                <p-button icon="pi pi-external-link" label="Show" (click)=" mostrarEditar(seccionSeleccionada)"></p-button>
+                <div *ngFor="let seccion1 of secciones1">
+                    
+                    
+                </div>
+
+                <div *ngFor="let seccion1 of secciones1">
+                    <div *ngFor="let seccion3 of secciones3">
+                        <p-button icon="pi pi-external-link" label="Show" (click)="mostrarEditar(seccion1); mostrarEditar(seccion3) "></p-button>
+                    </div>
+                </div>
+                
                 
                 
               

@@ -39,8 +39,11 @@ export class InicioComponent implements OnInit {
         this.titulo1= element.titulo
          //Le asignamos un dato a eslogan1 que viene de la base de datos
         this.eslogan1= element.descripcion
+
+        console.log(element.idSeccion)
       }
     })
+    
     //llamamos el metodo "getSeccion3" del servicio Seccion3Service
     this.servicioSeccion3.getSeccion3().subscribe(colSeccion3=>{
       this.secciones3= colSeccion3
@@ -51,12 +54,12 @@ export class InicioComponent implements OnInit {
         this.titulo2= element.titulo
         //Le asignamos un dato a eslogan2 que viene de la base de datos
         this.eslogan2= element.descripcion
+        
       }
     })
   }
 
   
-
 
   
 }
