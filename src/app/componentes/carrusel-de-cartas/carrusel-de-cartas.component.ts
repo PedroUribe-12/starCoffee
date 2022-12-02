@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/modelos/producto';
+import { ProductosService } from 'src/app/servicios/productos.service';
 
 @Component({
   selector: 'app-carrusel-de-cartas',
@@ -9,7 +10,7 @@ import { Producto } from 'src/app/modelos/producto';
 export class CarruselDeCartasComponent implements OnInit {
   productos:Producto[]=[]
   responsiveOptions:any=[]
-  constructor() {
+  constructor(private servicioProductos:ProductosService) {
     this.responsiveOptions = [
       {
         breakpoint: '1080px',
@@ -33,7 +34,7 @@ export class CarruselDeCartasComponent implements OnInit {
       }
   ];
 
-    this.productos=[
+    /*this.productos=[
       {
         nombre:'Cappuccino',
         descripcion:'zarpado en sabor',
@@ -76,10 +77,13 @@ export class CarruselDeCartasComponent implements OnInit {
         imagen:'../../../assets/imagenes/Cappuccino.png',
         puntuacion:4
       }
-    ]
+    ]*/
    }
 
   ngOnInit(): void {
+    this.servicioProductos.obtenerProductos().subscribe(producto =>{
+      this.productos = producto
+    } )
   }
 
 }

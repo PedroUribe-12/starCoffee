@@ -1,0 +1,75 @@
+<!-- contenedor principal del componente -->
+<div class="container-fluid my-4 h-auto">
+    <!--  -->
+    <div class="container-fluid px-5 w-100 w-md-90 w-lg-75 rounded">
+     <div class="row align-items-stretch">
+        <!-- contenedor de la imagen -->
+         <div class="col-sm-12 d-none bg-img d-md-block d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
+            <img class="img-fluid" src="../../../assets/galeria/galeria2.jpg" alt="fondo de cafeteria">
+         </div>
+         <!-- contenedor del formulario -->
+         <div class="col p-3 rounded-end">
+            <!-- contenedor del logo -->
+             <div class="text-center">
+                <!-- logo -->
+                 <a class="navbar-brand" routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">
+                     <img src="../../../assets/imagenes/logo-footer.png" width="200" alt="logo">
+                 </a>
+             </div>
+             <!-- titulo -->
+             <h1 class="h2 fw-bold text-center py-3 titulo">Bienvenido</h1>
+             
+             <!-- formulario -->
+
+             <form>
+                 <div class="mb-4">
+                     <label for="email" class="form-label texto">Correo Electronico</label>
+                     <input type="email" class="form-control" name="email">
+                 </div>
+                 <div class="mb-4">
+                     <label for="email" class="form-label  texto">Contraseña</label>
+                     <input type="password" class="form-control" name="password">
+                 </div>
+                 <div class="mb-4 form-check">
+                     <input type="checkbox" name="conectado" class="form-check-input texto">
+                     <label for="conectado" class="form-check-label texto">Recordarme</label>
+                 </div>
+                 <div class="d-grid">
+                     <button type="button" class="btn" routerLink="../../">Iniciar Sesión</button>
+                 </div>
+                 <div class="my-3  texto">
+                     <span>¿No tienes cuenta? <a routerLink="../registration">Registrarse</a></span> <br>
+                     <span><a routerLink="">Recuperar Contraseña</a></span>
+                 </div>
+             </form>
+                <!-- contenedor con las otras opciones de logueo -->
+             <div class="container w-100 my-3">
+                 <div class="row text-center  texto">
+                     <div class="col-12">Iniciar Sesión con:</div>
+                 </div>
+                 <!-- contenedor de los botones -->
+                 <div class="row">
+                     <div class="col-sm-12 col-md-6">
+                         <button class="btn w-100 my-1">
+                             <div class="row align-items-center">
+                                 <div class="col-12 text-center">
+                                     <i class="pi pi-facebook"> Facebook</i>
+                                 </div>
+                             </div>
+                         </button>
+                     </div>
+                     <div class="col-sm-12 col-md-6">
+                         <button class="btn w-100 my-1">
+                             <div class="row align-items-center">
+                                 <div class="col-12 text-center">
+                                     <i class="pi pi-google"> Google</i>
+                                 </div>
+                             </div>
+                         </button>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div> 
+ </div>
