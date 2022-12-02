@@ -13,7 +13,11 @@ import { SeccionesComponent } from './secciones/secciones.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
 
-
+import { AngularFireModule} from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { ProductosService } from '../servicios/productos.service';
+import { EventoService } from '../servicios/evento.service';
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 @NgModule({
   declarations: [
     PortadaComponent,
@@ -23,13 +27,15 @@ import { EventoComponent } from './evento/evento.component';
     GaleriaComponent,
     SeccionesComponent,
     HistoriaComponent,
-    EventoComponent
+    EventoComponent,
+    InicioSesionComponent
   ],
   imports: [
     CommonModule,
     RatingModule,
     FormsModule,
-    CarouselModule
+    CarouselModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   exports:[
   //Exportamos los componentes
@@ -41,7 +47,9 @@ import { EventoComponent } from './evento/evento.component';
     GaleriaComponent,
     SeccionesComponent,
     HistoriaComponent,
-    EventoComponent
-  ]
+    EventoComponent,
+    InicioSesionComponent
+  ],
+  providers:[ProductosService, EventoService]
 })
 export class ComponentesModule { }
