@@ -21,7 +21,7 @@ export class InicioComponent implements OnInit {
     imagen2:string='../../../assets/imagenes/maquinas-para-cafeteria.png'
 
 //inyectamos los servicios
-  constructor(private servicioSeccion1:Seccion1Service, private servicioSeccion3:Seccion3Service) { }
+  constructor(private servicioSeccion1:Seccion1Service) { }
   //declaramos las interfaces
   secciones1!: Seccion1[];
   secciones3!: Seccion3[];
@@ -33,30 +33,23 @@ export class InicioComponent implements OnInit {
       this.secciones1= colSeciones1
       //recoreemos el arreglo para mostrar los respectivos datos
       for (let index = 0; index < colSeciones1.length; index++) {
-        const element = colSeciones1[index];
+        const element = colSeciones1[0];
+        const element2= colSeciones1[1]
         console.log(colSeciones1)
          //Le asignamos un dato a titulo1 que viene de la base de datos
-        this.titulo1= element.titulo
+        this.titulo1= element2.titulo
          //Le asignamos un dato a eslogan1 que viene de la base de datos
-        this.eslogan1= element.descripcion
+        this.eslogan1= element2.descripcion
 
+
+        this.titulo2=element.titulo
+        this.eslogan2=element.descripcion
         console.log(element.idSeccion)
       }
     })
     
-    //llamamos el metodo "getSeccion3" del servicio Seccion3Service
-    this.servicioSeccion3.getSeccion3().subscribe(colSeccion3=>{
-      this.secciones3= colSeccion3
-       //recoreemos el arreglo para mostrar los respectivos datos
-      for (let inde1 = 0; inde1 < colSeccion3.length; inde1++) {
-        const element = colSeccion3[inde1];
-        //Le asignamos un dato a titulo2 que viene de la base de datos
-        this.titulo2= element.titulo
-        //Le asignamos un dato a eslogan2 que viene de la base de datos
-        this.eslogan2= element.descripcion
-        
-      }
-    })
+    
+   
   }
 
   

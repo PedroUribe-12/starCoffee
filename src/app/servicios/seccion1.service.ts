@@ -12,7 +12,7 @@ export class Seccion1Service {
   private colleciciondeSeccion1: AngularFirestoreCollection<Seccion1>
 
   constructor(db:AngularFirestore) {
-    this.colleciciondeSeccion1= db.collection('seccion1')
+    this.colleciciondeSeccion1= db.collection('secciones')
   }
 
   getSeccion1(){

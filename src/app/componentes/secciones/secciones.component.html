@@ -25,7 +25,7 @@
             <div class="texto">
                 <h5>{{tiuloSeccion}}</h5>
                 <p>{{esloganSeccion}}</p>
-                <button pButton pRipple type="button" class="p-button-rounded p-button-warning"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i></button>
+                
                
 
                 
@@ -36,6 +36,10 @@
                             <label for="exampleFormControlInput1" class="form-label">Agregar titulo</label>
                             <input type="text" class="form-control form-control-lg p-2" id="exampleFormControlInput1" formControlName="titulo">
                         </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Agregar Imagen</label>
+                            <input type="text" class="form-control form-control-lg p-2" id="exampleFormControlInput1" formControlName="imagen">
+                        </div>
                           <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Agregar el eslogan</label>
                             <textarea class="form-control  p-2" id="exampleFormControlTextarea1" rows="3" formControlName="descripcion"></textarea>
@@ -45,20 +49,22 @@
                    
                  
                         <ng-template pTemplate="footer">
-                            <p-button icon="pi pi-check" (click)="actualizar()" label="Actualizar" class="p-button-text"></p-button>
+                            <p-button icon="pi pi-check" (click)="actualizar()"  label="Actualizar" class="p-button-text"></p-button>
                             <p-button icon="pi pi-times" (click)="displayModal=false" label="No"></p-button>
                         </ng-template>
                 </p-dialog>
-                <div *ngFor="let seccion1 of secciones1">
+                
                     
                     
-                </div>
+               
 
+                
                 <div *ngFor="let seccion1 of secciones1">
-                    <div *ngFor="let seccion3 of secciones3">
-                        <p-button icon="pi pi-external-link" label="Show" (click)="mostrarEditar(seccion1); mostrarEditar(seccion3) "></p-button>
-                    </div>
+                   
+                    <button pButton pRipple type="button" class="p-button-rounded p-button-warning" (click)=" mostrarEditar(seccion1)" ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar  </button>
+                  
                 </div>
+              
                 
                 
                 
