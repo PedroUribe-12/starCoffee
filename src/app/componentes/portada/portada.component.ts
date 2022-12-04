@@ -19,7 +19,7 @@ export class PortadaComponent implements OnInit {
 
   position: string = '';
 
-  imagen!: string;
+  imagen?: string;
 
   PortadaSeleccionada!:Portada;
 
@@ -67,10 +67,10 @@ export class PortadaComponent implements OnInit {
         this.servicioAlmacenamiento.obtenerUrlImagen(resp).then(
           async url => {
             await this.servicioPortada.editarPortada(nuevaPortada.idPortada,nuevaPortada, url).then(platillo => {
-              alert('Portada actualizada')
+              alert('Portada actualizada');
             })
             .catch(error => {
-              alert('Ocurrio un error\nError: ' + error)
+              alert('Ocurrio un error\nError: ' + error);
             })
           }
         )
@@ -83,6 +83,7 @@ export class PortadaComponent implements OnInit {
         alert('Ocurrio un error\nError: ' + error)
       })
     }
+    this.imagen = undefined;
     //this.servicioAlmacenamiento.eliminarImagen(this.PortadaSeleccionada.imagen);
     
   

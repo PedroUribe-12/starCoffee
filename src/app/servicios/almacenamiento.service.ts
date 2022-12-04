@@ -15,7 +15,7 @@ export class AlmacenamientoService {
 
   async subirImagen(nombre: string, imagen: any){
     try{
-      let referenciaImagen = ref(this.storage,'seccion2/'+ nombre);// Guardamos la ruta donde se va a subir la imagen dentro del storage, dentro referenciaImagen
+      let referenciaImagen = ref(this.storage,'portada/'+ nombre);// Guardamos la ruta donde se va a subir la imagen dentro del storage, dentro referenciaImagen
       this.respuesta = await uploadString(referenciaImagen,/* URL de la imagen */imagen,/* Formato */'data_url').then(resp => {
         return resp;
       })
@@ -34,7 +34,7 @@ export class AlmacenamientoService {
   eliminarImagen(urlImagen?:string){
     let referenciaImagen = ref(this.storage, urlImagen); 
     deleteObject(referenciaImagen).then(resp =>{
-      alert('La imagen se elimino con éxito');
+      alert('Se actualizo la imagen');
     })
     .catch(err => {
       alert('No se pudo eliminar la imagen. Error:'+err);
