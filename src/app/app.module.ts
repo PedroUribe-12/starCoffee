@@ -5,11 +5,11 @@ import { AppComponent } from './app.component';
 import { PaginasModule } from './paginas/paginas.module';
 import { CompartidosModule } from './compartidos/compartidos.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import { PortadaService } from './servicios/portada.service';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AlmacenamientoService } from './servicios/almacenamiento.service';
-
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import { AlmacenamientoService } from './servicios/almacenamiento.service';
     PaginasModule,
     CompartidosModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [PortadaService, AlmacenamientoService],

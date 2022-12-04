@@ -18,6 +18,10 @@
 
     clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
 }
+.btn:hover{
+    background-color: $color-terciario;
+    color: $color-principal;
+  }
 
 @media screen and (min-width:1500px) {
 //Cambio de tamaño de la imagen cuando la pantalla cambia su tamaño
