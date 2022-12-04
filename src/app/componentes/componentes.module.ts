@@ -13,11 +13,20 @@ import { SeccionesComponent } from './secciones/secciones.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
 
+import {ButtonModule} from 'primeng/button';
+import {DialogModule} from 'primeng/dialog';
+import { InputTextareaModule } from "primeng/inputtextarea";
+import { InputTextModule } from "primeng/inputtext";
+
+
 import { AngularFireModule} from '@angular/fire/compat';
+
+
 import { environment } from 'src/environments/environment';
 import { ProductosService } from '../servicios/productos.service';
 import { EventoService } from '../servicios/evento.service';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+import { HistoriaService } from '../servicios/historia.service';
 @NgModule({
   declarations: [
     PortadaComponent,
@@ -34,7 +43,12 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
     CommonModule,
     RatingModule,
     FormsModule,
+    ReactiveFormsModule,
     CarouselModule,
+    ButtonModule,
+    DialogModule,
+    InputTextareaModule,
+    InputTextModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   exports:[
@@ -50,6 +64,6 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
     EventoComponent,
     InicioSesionComponent
   ],
-  providers:[ProductosService, EventoService]
+  providers:[ProductosService, EventoService, HistoriaService]
 })
 export class ComponentesModule { }
