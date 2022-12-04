@@ -122,3 +122,10 @@
     }
 }
 
+.boton-editar{
+    background-color: $color-secundario;
+    //Modificamos el color de la letra
+    color: $color-terciario;
+    //asignamos un padding 
+    padding:.5em 1.2em;
+}

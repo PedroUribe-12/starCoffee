@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortadaComponent } from './portada/portada.component';
-
 import { CartaProductoComponent } from './carta-producto/carta-producto.component';
 import {RatingModule} from 'primeng/rating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +11,7 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
+import {DialogModule} from 'primeng/dialog';
 
 import { AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
@@ -35,6 +35,8 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
     RatingModule,
     FormsModule,
     CarouselModule,
+    DialogModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   exports:[
