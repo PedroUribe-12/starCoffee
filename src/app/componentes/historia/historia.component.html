@@ -17,21 +17,25 @@
                         </div>  
 
 
-                        <!-- <div class="mb-3">
+                        <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Agregar Imagen</label>
                             <input type="file" class="form-control form-control-lg p-2" id="exampleFormControlInput1"  placeholder="imagen" accept=".jpg, .png, .gif" (change)="cargarImagen($event)">
                             
                         </div>
 
-                        <img [src]=imagenSeccion alt="actualizarImagen"> -->
+                        <img [src]="historias.imagenHistoria" alt="actualizarImagen">
                     </form>
                     
+                    <ng-template pTemplate="footer">
+                        <p-button icon="pi pi-check" (click)="actualizar()"  label="Actualizar" class="p-button-text"></p-button>
+                        <p-button icon="pi pi-times" (click)="displayModal=false" label="No"></p-button>
+                    </ng-template>
                     </p-dialog>
             </div> 
             <!-- <button pButton pRipple type="button" class="p-button-rounded p-button-warning"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar  </button> -->
         </div>
             <div class="col-6">
-                <img src="../../../assets/imagenes/cafeteria_historia.jpg" class="imagen" alt="">
+                <img [src]="historias.imagenHistoria" class="imagen" alt="">
                 
             </div>
             <img src="../../../assets/imagenes/logo_año.png" class="logo_fecha" alt="">   

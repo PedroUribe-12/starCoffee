@@ -36,6 +36,10 @@ export class HistoriaComponent implements OnInit {
     //llamamos al metodo "obtenerHistoria" para obtener los datos en el componente
     this.servicioHistoria.obtenerHistoria().subscribe(colHistoria=>{
       this.historia = colHistoria
+      for (let index = 0; index <colHistoria.length; index++) {
+        const element = colHistoria[index];
+        let fgdfg = element.imagenHistoria
+      }
     })
   }
 
@@ -68,6 +72,20 @@ export class HistoriaComponent implements OnInit {
     })
   }
 
-
+  //creamos el metodo "cargarImagen" para poder obtener la url y nombre de la imagen
+  cargarImagen(event:any){
+    let archivo = event.target.files[0]
+    let reader= new FileReader()
+    if(archivo!=undefined){
+      reader.readAsDataURL(archivo)
+      reader.onload= () => {
+        let url=reader.result
+        if (url!=null){
+          this.nombreImagen= archivo.name
+          this.imagen = url.toString()
+        }
+      }
+    }
+  }
 
 }
