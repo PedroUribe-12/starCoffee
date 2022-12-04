@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortadaComponent } from './portada/portada.component';
-
 import { CartaProductoComponent } from './carta-producto/carta-producto.component';
 import {RatingModule} from 'primeng/rating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +11,7 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
+import {DialogModule} from 'primeng/dialog';
 
 
 @NgModule({
@@ -29,7 +29,9 @@ import { EventoComponent } from './evento/evento.component';
     CommonModule,
     RatingModule,
     FormsModule,
-    CarouselModule
+    CarouselModule,
+    DialogModule,
+    ReactiveFormsModule
   ],
   exports:[
   //Exportamos los componentes
