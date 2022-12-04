@@ -11,3 +11,16 @@ $color-terciario:#f7f7f7;
 body{
     background: $color-principal;
 }
+
+.btn{
+    //Definicion de colores y forma del boton
+    color: $color-terciario;
+    background-color: $color-secundario;
+    border-radius: 40px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .carta .btn:hover{
+    background-color: $color-terciario;
+    color: $color-principal;
+  }

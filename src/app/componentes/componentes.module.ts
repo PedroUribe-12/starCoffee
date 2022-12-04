@@ -13,7 +13,11 @@ import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
 import {DialogModule} from 'primeng/dialog';
 
-
+import { AngularFireModule} from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { ProductosService } from '../servicios/productos.service';
+import { EventoService } from '../servicios/evento.service';
+import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 @NgModule({
   declarations: [
     PortadaComponent,
@@ -23,7 +27,8 @@ import {DialogModule} from 'primeng/dialog';
     GaleriaComponent,
     SeccionesComponent,
     HistoriaComponent,
-    EventoComponent
+    EventoComponent,
+    InicioSesionComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +36,8 @@ import {DialogModule} from 'primeng/dialog';
     FormsModule,
     CarouselModule,
     DialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   exports:[
   //Exportamos los componentes
@@ -43,7 +49,9 @@ import {DialogModule} from 'primeng/dialog';
     GaleriaComponent,
     SeccionesComponent,
     HistoriaComponent,
-    EventoComponent
-  ]
+    EventoComponent,
+    InicioSesionComponent
+  ],
+  providers:[ProductosService, EventoService]
 })
 export class ComponentesModule { }
