@@ -3,7 +3,7 @@
     <p-carousel [showIndicators]="false" contentClass="text-center" [value]="productos"  [circular]="true" [autoplayInterval]="3000" [numVisible]="4" [numScroll]="1" [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header">
             <h5 class="titulo__seccion">Productos Destacados</h5>
-            <button pButton pRipple type="button" (click)="mostrarModal()" label="Nuevo Produto" icon="fa-solid fa-plus" class="p-button btn"></button>
+            <button *ngIf="admin" pButton pRipple type="button" (click)="mostrarModal()" label="Nuevo Produto" icon="fa-solid fa-plus" class="p-button btn"></button>
         </ng-template>
         <ng-template let-producto pTemplate="item" >
             <app-carta-producto [admin]="admin" (productoEliminado)="mostrarEliminar($event)" (productoEnviado)="inputsEditar($event)" (mostrarModal)="mostrarModalEditar($event)" nombreProducto="{{producto.nombre}}" imagenProducto="{{producto.imagen}}"

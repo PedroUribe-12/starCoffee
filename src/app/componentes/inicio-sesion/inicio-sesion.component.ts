@@ -21,12 +21,14 @@ export class InicioSesionComponent implements OnInit {
   constructor( private authConEmail:InicioSesionService, private firebaseAuth:AngularFireAuth) { }
   
   ngOnInit(): void {
-    this.firebaseAuth.currentUser.then(user => {
-      if(user && user.emailVerified) {
-        this.usuario = user.email;
-      }
-    })
-    console.log(this.usuario)
+    // this.authConEmail
+    // this.firebaseAuth.currentUser.then(user => {
+    //   if(user && user.emailVerified) {
+    //     this.usuario = user.email;
+    //     this.verificarAdmin(this.usuario)
+    //   }
+    // })
+    // console.log(this.usuario)
   }
   iniciarVisible(){
     this.iniciar=true
@@ -45,14 +47,17 @@ export class InicioSesionComponent implements OnInit {
       this.limpiarFormulario()
     }else if(this.textoBoton === 'Iniciar Sesion'){
       this.authConEmail.iniciarSesion(this.datosUsuario.value.email, this.datosUsuario.value.contrasena)
-      this.ngOnInit()
-      this.limpiarFormulario()
+      this.usuario = this.datosUsuario.value.email
       this.verificarAdmin()
+      this.limpiarFormulario()
     }
   }
   verificarAdmin(){
-    if( this.usuario !=undefined){
+    if( this.usuario ==="josecarlosilafaya@gmail.com"){
       this.admin.emit(true)
+      console.log(this.usuario)
+    }else if(this.usuario==undefined){
+      this.admin.emit(false)
     }
   }
 }
