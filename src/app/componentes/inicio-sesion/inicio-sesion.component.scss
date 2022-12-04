@@ -22,6 +22,9 @@
     background-color: $color-terciario;
     color: $color-principal;
   }
+.link-primary{
+    cursor: pointer;
+}
 
 @media screen and (min-width:1500px) {
 //Cambio de tamaño de la imagen cuando la pantalla cambia su tamaño

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Producto } from 'src/app/modelos/producto';
 import { ProductosService } from 'src/app/servicios/productos.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -21,7 +21,7 @@ export class CarruselDeCartasComponent implements OnInit {
   productoSeleccionado!:Producto
   textoBoton!:string
   eliminarVisible=false;
-
+  @Input() admin:boolean=false;
 
   //Declaracion del FormGroup para el formulario reactivo
   nuevoProducto = new FormGroup({
@@ -33,6 +33,7 @@ export class CarruselDeCartasComponent implements OnInit {
   mostrarModal(){
     this.modalVisible= true
     this.textoBoton= "Agregar Producto"
+    console.log(this.admin)
   }
   mostrarModalEditar(valor:boolean){
     this.modalVisible= valor

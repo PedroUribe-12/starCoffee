@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { InicioSesionService } from 'src/app/servicios/inicio-sesion.service';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -6,10 +9,50 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio-sesion.component.scss']
 })
 export class InicioSesionComponent implements OnInit {
-
-  constructor() { }
-
+  iniciar:boolean=true
+  registrar:boolean=false
+  textoBoton='Iniciar Sesion'
+  usuario:any
+  @Output() admin = new EventEmitter<boolean>(false);
+  datosUsuario = new FormGroup({
+    email:new FormControl('',Validators.required),
+    contrasena:new FormControl('',Validators.required)
+  })
+  constructor( private authConEmail:InicioSesionService, private firebaseAuth:AngularFireAuth) { }
+  
   ngOnInit(): void {
+    this.firebaseAuth.currentUser.then(user => {
+      if(user && user.emailVerified) {
+        this.usuario = user.email;
+      }
+    })
+    console.log(this.usuario)
   }
-
+  iniciarVisible(){
+    this.iniciar=true
+    this.textoBoton='Iniciar Sesion'
+  }
+  registrarVisible(){
+    this.iniciar=false
+    this.textoBoton='Registrarse'
+  }
+  limpiarFormulario(){
+    this.datosUsuario.reset()
+  }
+   enviarDatos(){
+    if(this.textoBoton==='Registrarse'){
+      this.authConEmail.registro(this.datosUsuario.value.email, this.datosUsuario.value.contrasena)
+      this.limpiarFormulario()
+    }else if(this.textoBoton === 'Iniciar Sesion'){
+      this.authConEmail.iniciarSesion(this.datosUsuario.value.email, this.datosUsuario.value.contrasena)
+      this.ngOnInit()
+      this.limpiarFormulario()
+      this.verificarAdmin()
+    }
+  }
+  verificarAdmin(){
+    if( this.usuario !=undefined){
+      this.admin.emit(true)
+    }
+  }
 }

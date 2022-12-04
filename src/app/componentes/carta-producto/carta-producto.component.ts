@@ -9,11 +9,11 @@ import { Producto } from 'src/app/modelos/producto';
 export class CartaProductoComponent implements OnInit {
   usuario=false;
   lectura=true;
-  admin=true;
   editarVisible=false;
   eliminarVisible=false
 
   //Variables que le brindara el componente padre
+  @Input() admin:boolean=false;
   @Input() nombreProducto:string='';
   @Input() imagenProducto:string='';
   @Input() puntuacionProducto:string='0';
