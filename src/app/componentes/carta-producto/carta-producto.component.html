@@ -18,11 +18,10 @@
             <a *ngIf="usuario" href="#" class="btn">Ver ingredientes</a>
             <div class="row" *ngIf="admin">
                 <div class="col">
-                    <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-success"></button>
-        
+                    <button pButton pRipple (click)="editarVisible=true" (click)="modalVisible()" type="button" icon="fa-solid fa-pen" class="p-button-rounded btn"></button>
                 </div>
                 <div class="col">
-                    <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-success"></button>
+                    <button pButton pRipple (click)="eliminarVisible=true" (click)="eliminar()" type="button" icon="fa-solid fa-trash-can" class="p-button-rounded p-button-danger"></button>
                 </div>
             </div>
         </div>
@@ -30,3 +29,4 @@
     </div>
 
 </div>
+

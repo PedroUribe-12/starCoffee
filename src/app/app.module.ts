@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PaginasModule } from './paginas/paginas.module';
 import { CompartidosModule } from './compartidos/compartidos.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { CompartidosModule } from './compartidos/compartidos.module';
     BrowserModule,
     AppRoutingModule,
     PaginasModule,
-    CompartidosModule
+    CompartidosModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

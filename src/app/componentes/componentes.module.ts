@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortadaComponent } from './portada/portada.component';
+import { BrowserModule } from '@angular/platform-browser';
+
 
 import { CartaProductoComponent } from './carta-producto/carta-producto.component';
 import {RatingModule} from 'primeng/rating';
@@ -20,6 +22,10 @@ import { EventoService } from '../servicios/evento.service';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 
 import {ButtonModule} from 'primeng/button';
+import {DialogModule} from 'primeng/dialog';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -39,8 +45,12 @@ import {ButtonModule} from 'primeng/button';
     FormsModule,
     CarouselModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    ButtonModule
-  ],
+    ButtonModule,
+    DialogModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    ReactiveFormsModule
+    ],
   exports:[
   //Exportamos los componentes
     PortadaComponent,
@@ -54,6 +64,6 @@ import {ButtonModule} from 'primeng/button';
     EventoComponent,
     InicioSesionComponent
   ],
-  providers:[ProductosService, EventoService]
+  providers:[ProductosService]
 })
 export class ComponentesModule { }
