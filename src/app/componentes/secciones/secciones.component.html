@@ -28,22 +28,29 @@
                 
                
 
-                
+                <!--Hacemo un modal que se va a mostrar cuando se haga click en editar-->
                 <p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
                     [draggable]="false" [resizable]="false">
+                    <!--Creamo el formulario y le agregaos el controlador-->
                     <form [formGroup]="actualizarSeccion">
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Agregar titulo</label>
                             <input type="text" class="form-control form-control-lg p-2" id="exampleFormControlInput1" formControlName="titulo">
                         </div>
+                        
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Agregar Imagen</label>
-                            <input type="text" class="form-control form-control-lg p-2" id="exampleFormControlInput1" formControlName="imagen">
-                        </div>
-                          <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Agregar el eslogan</label>
                             <textarea class="form-control  p-2" id="exampleFormControlTextarea1" rows="3" formControlName="descripcion"></textarea>
-                          </div>
+                        </div>  
+
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Agregar Imagen</label>
+                            <input type="file" class="form-control form-control-lg p-2" id="exampleFormControlInput1"  placeholder="imagen" accept=".jpg, .png, .gif" (change)="cargarImagen($event)">
+                            
+                        </div>
+
+                        <img [src]=imagenSeccion alt="actualizarImagen">
                     </form>
                    
                    

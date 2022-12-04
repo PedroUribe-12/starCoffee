@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Seccion1 } from 'src/app/modelos/seccion1';
 import { Seccion1Service } from 'src/app/servicios/seccion1.service';
+import { StorageService } from 'src/app/servicios/storage.service';
 
 @Component({
   selector: 'app-secciones',
@@ -15,17 +16,18 @@ export class SeccionesComponent implements OnInit {
   @Input() esloganSeccion:string | undefined
   @Input() imagenSeccion:string | undefined
   
- 
+  imagen:string;
+  nombreImagen:string
 
   //creamos el controlador del formulario
   actualizarSeccion= new FormGroup({
     titulo: new FormControl('', Validators.required)!,
     descripcion: new FormControl('', Validators.required)!,
-    imagen: new FormControl('',Validators.required)!
+    
   })
   seccionSeleccionada!:Seccion1
  
-  constructor(private servicioSeccion1:Seccion1Service,) { }
+  constructor(private servicioSeccion1:Seccion1Service, private storage:StorageService) { }
 
   //declaramos las interfaces
   secciones1!: Seccion1[];
@@ -48,7 +50,7 @@ export class SeccionesComponent implements OnInit {
     this.actualizarSeccion.setValue({
       titulo: seccionSeleccionada.titulo,
       descripcion: seccionSeleccionada.descripcion,
-      imagen: seccionSeleccionada.imagen
+      
       
     })
     
@@ -60,7 +62,7 @@ export class SeccionesComponent implements OnInit {
     let nuevaSeccion:Seccion1= {
       titulo: this.actualizarSeccion.value.titulo!,
       descripcion: this.actualizarSeccion.value.descripcion!,
-      imagen: this.actualizarSeccion.value.imagen!,
+      imagen: "",
       idSeccion: this.seccionSeleccionada.idSeccion
     
     }
@@ -70,15 +72,30 @@ export class SeccionesComponent implements OnInit {
       this. actualizarSeccion= new FormGroup({
         titulo: new FormControl('', Validators.required)!,
         descripcion: new FormControl('', Validators.required)!,
-        imagen: new FormControl('', Validators.required)!
+       
       })
     
     })
     .catch((error)=>{
       alert('No se puede actualizar')
     })
+  }
 
 
+  //creamos el metodo "cargarImagen" para poder obtener la url y nombre de la imagen
+  cargarImagen(event:any){
+    let archivo = event.target.files[0]
+    let reader= new FileReader()
+    if(archivo!=undefined){
+      reader.readAsDataURL(archivo)
+      reader.onload= () => {
+        let url=reader.result
+        if (url!=null){
+          this.nombreImagen= archivo.name
+          this.imagen = url.toString()
+        }
+      }
+    }
   }
 
   

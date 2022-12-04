@@ -22,6 +22,7 @@ import {AngularFireModule} from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
 
 import { Seccion1Service } from '../servicios/seccion1.service';
+import { StorageService } from '../servicios/storage.service';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { Seccion1Service } from '../servicios/seccion1.service';
     EventoComponent
   ],
   providers:[
-    Seccion1Service
+    Seccion1Service,
+    StorageService
   ]
 })
 export class ComponentesModule { }

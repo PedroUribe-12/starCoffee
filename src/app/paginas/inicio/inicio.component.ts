@@ -14,11 +14,11 @@ export class InicioComponent implements OnInit {
   //datos que le van a dar a un componente que esta usando input
     titulo1:string=""
     eslogan1:string=""
-    imagen1:string='../../../assets/imagenes/medialunas.jpg'
+    imagen1:string=''
   //datos que le van a dar a un componente que esta usando input
     titulo2:string=""
     eslogan2:string=""
-    imagen2:string='../../../assets/imagenes/maquinas-para-cafeteria.png'
+    imagen2:string=''
 
 //inyectamos los servicios
   constructor(private servicioSeccion1:Seccion1Service) { }
@@ -40,10 +40,11 @@ export class InicioComponent implements OnInit {
         this.titulo1= element2.titulo
          //Le asignamos un dato a eslogan1 que viene de la base de datos
         this.eslogan1= element2.descripcion
-
+        this.imagen1= element2.imagen
 
         this.titulo2=element.titulo
         this.eslogan2=element.descripcion
+        this.imagen2=element.imagen
         console.log(element.idSeccion)
       }
     })
