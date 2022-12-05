@@ -26,12 +26,9 @@ export class PortadaComponent implements OnInit {
   //Creamos la propiedad nombreImagen de tipo string vacio
   nombreImagen: string = '';
 
-  constructor( /* Injectamos los servicios PortadaService y AlmacenamientoService*/private servicioPortada: PortadaService, private servicioAlmacenamiento: AlmacenamientoService){
-
-  @Input() admin:boolean=false;
-  constructor( private servicioPortada: PortadaService, private servicioAlmacenamiento: AlmacenamientoService){
-
+  constructor( private servicioPortada: PortadaService, private servicioAlmacenamiento: AlmacenamientoService){ /* Injectamos los servicios PortadaService y AlmacenamientoService*/
   }
+  @Input() admin:boolean=false;
 
   ngOnInit(){
     //Nos suscribimos a los cambios de la colleccion
