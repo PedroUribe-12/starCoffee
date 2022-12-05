@@ -10,7 +10,7 @@ export class Seccion3Service {
 
   private colleciciondeSeccion3: AngularFirestoreCollection<Seccion3>
 
-  constructor(db:AngularFirestore) {
+  constructor(db:AngularFirestore) {          
     this.colleciciondeSeccion3= db.collection('seccion3')
   }
 
@@ -19,6 +19,7 @@ export class Seccion3Service {
   }
   
   editarSeccion3(idSeccion3:string, nuevosDatos:Seccion3, url?:string){
+
     if(url){
       nuevosDatos.imagen = url
     }

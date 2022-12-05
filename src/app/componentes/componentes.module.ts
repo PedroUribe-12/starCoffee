@@ -25,6 +25,7 @@ import { Seccion1Service } from '../servicios/seccion1.service';
 import { StorageService } from '../servicios/storage.service';
 import { Seccion1Component } from './seccion1/seccion1.component';
 import { Seccion3Component } from './seccion3/seccion3.component';
+import { Seccion3Service } from '../servicios/seccion3.service';
 
 
 @NgModule({
@@ -69,6 +70,7 @@ import { Seccion3Component } from './seccion3/seccion3.component';
   ],
   providers:[
     Seccion1Service,
+    Seccion3Service,
     StorageService
   ]
 })

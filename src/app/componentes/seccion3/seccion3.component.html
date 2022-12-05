@@ -15,7 +15,7 @@
                     <p>{{seccion3.descripcion}}</p>
                 
                     <button pButton pRipple type="button" class="p-button-rounded p-button-warning" (click)=" mostrarEditar(seccion3)"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar  </button>
-                    <p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+                    <p-dialog header="Actualizar Seccion 3" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
                         [draggable]="false" [resizable]="false">
                         <!--Creamo el formulario y le agregaos el controlador-->
                         <form [formGroup]="actualizarSeccion">
@@ -32,7 +32,7 @@
 
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Agregar Imagen</label>
-                                <input type="file" class="form-control form-control-lg p-2" id="exampleFormControlInput1" formControlName="imagen" placeholder="imagen" accept=".jpg, .png, .gif" (change)="cargarImagen($event)">
+                                <input type="file" class="form-control form-control-lg p-2" id="exampleFormControlInput1" placeholder="imagen" accept=".jpg, .png, .gif" (change)="cargarImagen($event)">
                                 
                             </div>
 
@@ -42,7 +42,7 @@
                     
                     
                             <ng-template pTemplate="footer">
-                                <p-button icon="pi pi-check" (click)="actualizar()"  label="Actualizar" class="p-button-text"></p-button>
+                                <p-button icon="pi pi-check" (click)="actualizarSeccion3()"  label="Actualizar" class="p-button-text"></p-button>
                                 <p-button icon="pi pi-times" (click)="displayModal=false" label="No"></p-button>
                             </ng-template>
                     </p-dialog>            

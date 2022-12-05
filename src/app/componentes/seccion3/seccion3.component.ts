@@ -13,9 +13,16 @@ export class Seccion3Component implements OnInit {
 
 
   imagen?:string;
+
   nombreImagen:string
 
+  //declaramos la interfas
+  seciones3: Seccion3[]
+
   displayModal:Boolean= false
+
+  seccionSeleccionada!:Seccion3
+
   //creamos el controlador del formulario
   actualizarSeccion= new FormGroup({
     titulo: new FormControl('', Validators.required)!,
@@ -23,12 +30,7 @@ export class Seccion3Component implements OnInit {
     
   })
 
-  //declaramos la interfas
-  seciones3!: Seccion3[]
-  seccionSeleccionada!:Seccion3
   constructor(private servicioSeccion3:Seccion3Service, private storage:StorageService) { }
-
-  
 
   ngOnInit(): void {
     
@@ -39,7 +41,7 @@ export class Seccion3Component implements OnInit {
 
   //creamos un metodo para mostrar los valores y poder cambiarlos
   mostrarEditar(seccionSeleccionada:Seccion3){
-
+    
     this.seccionSeleccionada = seccionSeleccionada
     this.displayModal= true
     this.actualizarSeccion.setValue({
@@ -53,13 +55,13 @@ export class Seccion3Component implements OnInit {
   }
   
   //creamos un meto para actualizar los datos cambiados
-  actualizar(){
+  actualizarSeccion3(){
 
     let nuevaSeccion:Seccion3= {
       titulo: this.actualizarSeccion.value.titulo!,
       descripcion: this.actualizarSeccion.value.descripcion!,
       imagen: this.seccionSeleccionada.imagen,
-      idSeccion: this.seccionSeleccionada.idSeccion
+      idSeccion3: this.seccionSeleccionada.idSeccion3
       
     }
    if(this.imagen){
@@ -68,7 +70,7 @@ export class Seccion3Component implements OnInit {
     .then(async resp=>{
       this.storage.obtenerUrlSeccion3(resp).then(
        async url => {
-        await this.servicioSeccion3.editarSeccion3(nuevaSeccion.idSeccion, nuevaSeccion, url).then(secc=>{
+        await this.servicioSeccion3.editarSeccion3(nuevaSeccion.idSeccion3, nuevaSeccion, url).then(secc=>{
           alert('Seccion Actualizada')
           this.displayModal=false
         })
@@ -79,7 +81,7 @@ export class Seccion3Component implements OnInit {
       )
     })
    }else{
-    this.servicioSeccion3.editarSeccion3(nuevaSeccion.idSeccion, nuevaSeccion, ).then(secc=>{
+    this.servicioSeccion3.editarSeccion3(nuevaSeccion.idSeccion3, nuevaSeccion, ).then(secc=>{
       alert('Seccion Actualizada sin imagen')
       this.displayModal= false
     })
