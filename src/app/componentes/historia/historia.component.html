@@ -1,16 +1,16 @@
 
 <div class="container-fluid mt-4">
-    <div class="row d-flex justify-content-center align-self-center historia2 align-items-center" *ngFor="let historias of historia">
+    <div class="row d-flex justify-content-center align-self-center historia2 align-items-center" *ngFor="let historia of historias">
         <div class="col-6 d-flex justify-content-center align-self-center">
             <div class="historia">
                 <h3>Historia</h3>
-                <p> {{historias.descripcion}}</p>
-                    <button pButton pRipple type="button" (click)="mostrarEditar(historias)" class="btn mb-4 boton-editar position-absolute ms-5" ><i class="pi pi-pencil p-1 " style="font-size: 1.5rem"></i>Editar  </button>
+                <p> {{historia.descripcion}}</p>
+                    <button *ngIf="admin" pButton pRipple type="button" (click)="mostrarEditar(historia)" class="btn mb-4 boton-editar position-absolute" ><i class="pi pi-pencil p-1 " style="font-size: 1.5rem"></i>Editar  </button>
                   
-                    <p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+                    <p-dialog header="Header" [(visible)]="modalVisible" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
                     [draggable]="false" [resizable]="false">
                     <!--Creamo el formulario y le agregaos el controlador-->
-                    <form [formGroup]="actualizarHistoria">
+                    <form [formGroup]="nuevaHistoria">
                            
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Escribir Historia</label>
@@ -24,18 +24,18 @@
                             
                         </div>
 
-                        <img [src]="historias.imagenHistoria" alt="actualizarImagen">
+                        <img [src]="historia.imagenHistoria" alt="actualizarImagen">
                     </form>
                     
                     <ng-template pTemplate="footer">
-                        <button icon="pi pi-check" (click)="actualizar()" (click)="displayModal=false"  class="btn boton-editar">actualizar</button>
+                        <button icon="pi pi-check" (click)="cargarHistoria()"  class="btn boton-editar">actualizar</button>
                     </ng-template>
                     </p-dialog>
             </div> 
             <!-- <button pButton pRipple type="button" class="p-button-rounded p-button-warning"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar  </button> -->
         </div>
             <div class="col-6">
-                <img [src]="historias.imagenHistoria" class="imagen" alt="">
+                <img [src]="historia.imagenHistoria" class="imagen" alt="">
                 
             </div>
             <img src="../../../assets/imagenes/logo_año.png" class="logo_fecha" alt="">   

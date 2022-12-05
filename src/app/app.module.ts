@@ -22,7 +22,7 @@ import { AlmacenamientoService } from './servicios/almacenamiento.service';
     AppRoutingModule,
     PaginasModule,
     CompartidosModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

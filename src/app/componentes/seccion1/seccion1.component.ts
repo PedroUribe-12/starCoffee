@@ -38,9 +38,7 @@ export class Seccion1Component implements OnInit {
   ngOnInit(): void {
     //llamamos el metodo "getSeccion1" del servicio Seccion1Service
     this.servicioSeccion1.getSeccion1().subscribe(colSeciones1=>{
-      this.secciones1= colSeciones1})
-
-   
+    this.secciones1= colSeciones1})   
   }
   
   
@@ -70,7 +68,7 @@ export class Seccion1Component implements OnInit {
     }
    if(this.imagen){
     this.storage.deleteImagen(this.seccionSeleccionada.imagen);
-    this.storage.subirImagenaSeccion1(this.nombreImagen, this.imagen)
+    this.storage.subirImagenaSeccion3(this.nombreImagen, this.imagen)
     .then(async resp=>{
       this.storage.obtenerUrlIMagen(resp).then(
         async url => {
