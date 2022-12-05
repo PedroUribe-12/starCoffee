@@ -1,0 +1,34 @@
+@import '../../../styles.scss';/*importacion del archivo principal de estilos*/
+.container-fluid{
+
+    //definimos los colores de los textos de la seccion
+    .texto{
+        color: $color-terciario;
+    }
+    .titulo{
+        color: $color-secundario;
+    }
+}
+.bg-img{
+    //Definimos un tamaño maximo que ocupe toda la pantalla
+    max-height: 100vh;
+    //Centramos el foco en el centro
+    object-position: center;
+    object-fit: cover;
+
+    clip-path: polygon(0% 0, 100% 0%, 100% 100%, 0 100%);
+}
+.btn:hover{
+    background-color: $color-terciario;
+    color: $color-principal;
+  }
+.link-primary{
+    cursor: pointer;
+}
+
+@media screen and (min-width:1500px) {
+//Cambio de tamaño de la imagen cuando la pantalla cambia su tamaño
+    .bg-img{
+        max-height: 70vh;
+    }
+}
