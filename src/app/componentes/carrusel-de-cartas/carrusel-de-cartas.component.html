@@ -1,12 +1,53 @@
 <div class="container-fluid text-center my-3">
     <!--Uso del componente carrusel de prime-->
-    <p-carousel [showIndicators]="false" contentClass="text-center" [value]="productos" [autoplayInterval]="3000" [circular]="true" [numVisible]="4" [numScroll]="1" [responsiveOptions]="responsiveOptions">
+    <p-carousel [showIndicators]="false" contentClass="text-center" [value]="productos"  [circular]="true" [autoplayInterval]="3000" [numVisible]="4" [numScroll]="1" [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header">
+                <!-- Seccion del titulo-->
             <h5 class="titulo__seccion">Productos Destacados</h5>
+            <button *ngIf="admin" pButton pRipple type="button" (click)="mostrarModal()" label="Nuevo Produto" icon="fa-solid fa-plus" class="p-button btn"></button>
         </ng-template>
+            <!-- Seccion de las cartas -->
         <ng-template let-producto pTemplate="item" >
-            <app-carta-producto nombreProducto="{{producto.nombre}}" imagenProducto="{{producto.imagen}}"
-            puntuacionProducto="{{producto.puntuacion}}"></app-carta-producto>
+            <app-carta-producto [admin]="admin" (productoEliminado)="mostrarEliminar($event)" (productoEnviado)="inputsEditar($event)" (mostrarModal)="mostrarModalEditar($event)" nombreProducto="{{producto.nombre}}" imagenProducto="{{producto.imagen}}"
+            puntuacionProducto="{{producto.puntuacion}} " descripcionProducto="{{producto.descripcion}}" idProducto="{{producto.idProducto}}"></app-carta-producto>
         </ng-template>
     </p-carousel>    
 </div>
+
+<!-- Inicio de los modales -->
+
+<!-- Modal para agregar o editar un producto -->
+<p-dialog  [modal]="true" [draggable]="false" [resizable]="false" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"  header="{{textoBoton}}" [(visible)]="modalVisible" [style]="{width: '50vw'}">
+    <form [formGroup]="nuevoProducto">
+        <img [src]="imagen" alt="no hay imagen" width="150">
+        <div class="mb-4">
+            <label for="producto" class="form-label texto">Producto</label>
+            <input type="text" class="form-control" name="producto" formControlName="nombre">
+        </div>
+
+        <div class="mb-4">
+            <label for="puntuacion" class="form-label texto">Puntuacion</label>
+            <input type="number" max="5" min="0" class="form-control" name="puntuacion" formControlName="puntuacion">
+        </div>
+
+        <div class="mb-4">
+            <label for="descripcion" class="form-label texto">Descripcion</label>
+            <input type="text" class="form-control" name="descripcion" formControlName="descripcion">
+        </div>
+        <input id="float-input" type="file" class="p-float-label my-3" pInputText (change)="cargarImagen($event)">
+        <p-button label="{{textoBoton}}" (click)="cargarProducto()" (click)="modalVisible=false"></p-button>
+    </form>
+
+</p-dialog>
+
+<!-- Modal para confirmar la eliminacion de un producto -->
+<p-dialog header="Eliminar" [(visible)]="eliminarVisible" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
+    [resizable]="false">
+    <p class="m-0">
+        ¿Estas seguro de eliminar este producto?
+    </p>
+    <ng-template pTemplate="footer">
+        <p-button icon="fa-solid fa-trash-can" (click)="eliminarVisible=false" (click)="eliminarProducto()" label="Eliminar" styleClass="p-button-text"></p-button>
+        <p-button icon="fa-solid fa-ban" (click)="eliminarVisible=false" label="Cancelar" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
