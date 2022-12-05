@@ -4,7 +4,7 @@ import { getDownloadURL, getStorage, ref, UploadResult, uploadString, deleteObje
 @Injectable({
   providedIn: 'root'
 })
-export class AlmacenamientoService {
+export class AlmacenamientoEventoService {
 
   //obtenemos las referencias del storage y la guardamos en la variable privada storage
   private storage = getStorage();
@@ -19,7 +19,7 @@ export class AlmacenamientoService {
   //Creamos el metodo asincrono subirImagen que recibira como parametro un nombre de tipo string y una imagen de tipo any 
   async subirImagen(nombre: string, imagen: any){
     try{
-      let referenciaImagen = ref(this.storage,'portada/'+ nombre);// Guardamos la ruta donde se va a subir la imagen dentro del storage, dentro referenciaImagen
+      let referenciaImagen = ref(this.storage,'evento/'+ nombre);// Guardamos la ruta donde se va a subir la imagen dentro del storage, dentro referenciaImagen
       this.respuesta = await uploadString(referenciaImagen,/* URL de la imagen */imagen,/* Formato */'data_url').then(resp => {
         return resp;
       })
@@ -52,4 +52,5 @@ export class AlmacenamientoService {
       alert('No se pudo eliminar la imagen. Error:'+err);
     })
   } 
+
 }

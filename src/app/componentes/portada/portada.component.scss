@@ -66,7 +66,7 @@
     .btn:hover{
         background-color: $color-terciario;
         color: $color-principal;
-      }
+    }
 }
 
 //-------------------- Usamos media query para modificar el tamaño de los titulos  y demás ------------
@@ -122,6 +122,18 @@
         h2{
             //Modifica el tamaño de letra.
             font-size: 2.87em;
+        }
+    }
+
+}
+
+//usamos ::ng-deep para modificar clases, eticas html de primeng
+::ng-deep{
+    //Asignmos hasta que cantidad de pixeles de ancho se aplicara nuestro estilo
+    @media screen and (max-width:767px){
+        .p-dialog{
+            //modificamos su ancho
+            width: 75vw !important;
         }
     }
 }

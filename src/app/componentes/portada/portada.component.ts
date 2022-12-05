@@ -11,79 +11,113 @@ import { PortadaService } from 'src/app/servicios/portada.service';
 })
 export class PortadaComponent implements OnInit {
 
+  //Creamos la propiedad portada que guardara un arreglo de tipo Portada que si o si se le debera asignar un valor más tarde
   portadas!: Portada[];
 
+  //Creamos la propiedad modalVisible para activar el modal
   modalVisible: boolean = false;
 
-  displayPosition: boolean = false;
-
-  position: string = '';
-
+  //Creamos la propiedad imagen que sera opcionalmente de tipo string
   imagen?: string;
 
-  PortadaSeleccionada!:Portada;
+  //Creamos la propiedad portadaSeleccionada de tipo Portada que si o si se le debera asignar un valor más tarde
+  portadaSeleccionada!:Portada;
 
+  //Creamos la propiedad nombreImagen de tipo string vacio
   nombreImagen: string = '';
 
-  constructor( private servicioPortada: PortadaService, private servicioAlmacenamiento: AlmacenamientoService){
+  constructor( /* Injectamos los servicios PortadaService y AlmacenamientoService*/private servicioPortada: PortadaService, private servicioAlmacenamiento: AlmacenamientoService){
 
   }
 
   ngOnInit(){
+    //Nos suscribimos a los cambios de la colleccion
     this.servicioPortada.obtenerPortada().subscribe(portada => {
+      //luego lo guardamos en portadas que fue declarada fuera del ngOnInit
       this.portadas = portada;
     }) 
   }
 
+  // Creamos la propiedad nuevaPortada que comprobara si los datos se han llenado o no
   nuevaPortada= new FormGroup({
+    //los datos a llenar serian aquellos input con el FormControlName llamado titulo
     titulo: new FormControl('', Validators.required),
+    //los datos a llenar serian aquellos input con el FormControlName llamado subtitulo
     subtitulo: new FormControl('', Validators.required)
   });
 
-  mostrarEditar(PortadaSeleccionada:Portada){
+  //Creamos el metodo mostrarEditar que recibira por parametro portadaSeleccionada de tipo Portada
+  mostrarEditar(portadaSeleccionada:Portada){
 
+    //Cambiamos el valor del modalVisible a true, para que el modal se abra
     this.modalVisible = true;
 
-    this.PortadaSeleccionada = PortadaSeleccionada;
+    //Asignamos la portadaSeleccionada enviada por parametro a la portadaSeleccionada declarada fuera del mostrarEditar
+    this.portadaSeleccionada = portadaSeleccionada;
 
+    //Asinamos los valores de la portadaSeleccionada a la nuevaPortada, para que al abrir el modal se encuentren los valores que estan actualmente
     this.nuevaPortada.setValue({
-      titulo:PortadaSeleccionada.titulo,
-      subtitulo:PortadaSeleccionada.subtitulo,
+      titulo:portadaSeleccionada.titulo,
+      subtitulo:portadaSeleccionada.subtitulo,
     })
   }
 
+  //Creamos el metodo actualizar portada
   actualizarPortada(){
+
+    //Creamos el objeto nuevaPortada que almacenara los datos puestos en el formulario y los valores de la portadaSeleccionada
     let nuevaPortada: Portada = {
       titulo: this.nuevaPortada.value.titulo!,
       subtitulo: this.nuevaPortada.value.subtitulo!,
-      idPortada: this.PortadaSeleccionada.idPortada,
-      imagen: this.PortadaSeleccionada.imagen,
+      idPortada: this.portadaSeleccionada.idPortada,
+      imagen: this.portadaSeleccionada.imagen,
     }
 
-    if(this.imagen){
-      this.servicioAlmacenamiento.eliminarImagen(this.PortadaSeleccionada.imagen);
-      this.servicioAlmacenamiento.subirImagen(this.nombreImagen, this.imagen)
-      .then(async resp => {
-        this.servicioAlmacenamiento.obtenerUrlImagen(resp).then(
-          async url => {
-            await this.servicioPortada.editarPortada(nuevaPortada.idPortada,nuevaPortada, url).then(platillo => {
-              alert('Portada actualizada');
-            })
-            .catch(error => {
-              alert('Ocurrio un error\nError: ' + error);
-            })
-          }
-        )
-      })
+    //si no faltan campos por rellenar entrara al if
+    if(this.nuevaPortada.valid){
+      //si el usuario a seleccionado una imagen en el formulario entonces entrara al if
+      if(this.imagen){
+        //Se invocara el metodo eliminarImagen con el parametro portadaSeleccionada.imagen que representa el nombre de la misma, para borrar la imagen de la base de datos
+        this.servicioAlmacenamiento.eliminarImagen(this.portadaSeleccionada.imagen);
+        //Se invocara el metodo de subirImagen con los parametros nombreImagen y la imagen, para subir la imagen a la base de datos
+        this.servicioAlmacenamiento.subirImagen(this.nombreImagen, this.imagen)
+        .then(async resp => {
+          this.servicioAlmacenamiento.obtenerUrlImagen(resp).then(
+            async url => {
+              //Esperara a que los cambios sean ejecutados 
+              await this.servicioPortada.editarPortada(nuevaPortada.idPortada,nuevaPortada, url).then(platillo => {
+                //Y luego nos mostrara la suguiente alerta
+                alert('Portada actualizada');
+              })
+              //En caso de un error, lo encapsularemos
+              .catch(error => {
+                //Y luego lo mostraremos en la siguiente alerta
+                alert('Ocurrio un error\nError: ' + error);
+              })
+            }
+          )
+        })
+      }else{
+        //En caso de que el usuario no haya seleccionado una imagen, simplemente se modificara el texto
+        this.servicioPortada.editarPortada(nuevaPortada.idPortada,nuevaPortada).then(platillo => {
+          alert('Portada actualizada sin imagen')
+        })
+        //En caso de algun error, lo encapsularemos
+        .catch(error => {
+          //Y luego lo mostraremos en el siguiente alert
+          alert('Ocurrio un error\nError: ' + error)
+        })
+      }
+    //En caso de que no se hayan rellenado los inputs con los datos y esten vacios entrara al else  
     }else{
-      this.servicioPortada.editarPortada(nuevaPortada.idPortada,nuevaPortada).then(platillo => {
-        alert('Portada actualizada sin imagen')
-      })
-      .catch(error => {
-        alert('Ocurrio un error\nError: ' + error)
-      })
+      //Y mostrara el siguiente alert
+      alert('Faltan rellenar campos')
     }
+
     this.imagen = undefined;
+
+    //Y luego modificara el valor del modalVisible a false, para que el modal se cierre
+    this.modalVisible = false;
     //this.servicioAlmacenamiento.eliminarImagen(this.PortadaSeleccionada.imagen);
     
   
@@ -107,7 +141,9 @@ export class PortadaComponent implements OnInit {
     }) */
   }
 
+  //Creamos el metodo cargarPortada
   cargarPortada(){
+    //Este metodo invocara el metodo actualizarPortada
     this.actualizarPortada();
   }
 

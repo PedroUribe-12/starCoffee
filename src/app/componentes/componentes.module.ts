@@ -12,18 +12,16 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
-import {DialogModule} from 'primeng/dialog';
-
 import { AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { ProductosService } from '../servicios/productos.service';
-import { EventoService } from '../servicios/evento.service';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
-
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlmacenamientoSeccion2Service } from '../servicios/almacenamiento-seccion2.service';
+import { Seccion2Service } from '../servicios/seccion2.service';
+import { AlmacenamientoService } from '../servicios/almacenamiento.service';
 
 
 @NgModule({
@@ -63,6 +61,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EventoComponent,
     InicioSesionComponent
   ],
-  providers:[ProductosService]
+  providers:[ProductosService, AlmacenamientoSeccion2Service, Seccion2Service, AlmacenamientoService]
 })
 export class ComponentesModule { }
