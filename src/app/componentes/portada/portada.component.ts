@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Portada } from 'src/app/modelos/portada';
 import { AlmacenamientoService } from 'src/app/servicios/almacenamiento.service';
@@ -27,6 +27,9 @@ export class PortadaComponent implements OnInit {
   nombreImagen: string = '';
 
   constructor( /* Injectamos los servicios PortadaService y AlmacenamientoService*/private servicioPortada: PortadaService, private servicioAlmacenamiento: AlmacenamientoService){
+
+  @Input() admin:boolean=false;
+  constructor( private servicioPortada: PortadaService, private servicioAlmacenamiento: AlmacenamientoService){
 
   }
 

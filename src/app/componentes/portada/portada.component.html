@@ -11,7 +11,7 @@
             <h1 class="mb-3 text-break">{{portada.titulo}}</h1>
             <h2 class="text-uppercase mb-5 text-break">{{portada.subtitulo}}</h2>
             <button class="btn mb-4">Leer más</button>
-            <button class="btn mb-4" (click)="mostrarEditar(portada)"><i class="fa-solid fa-pencil me-3"></i>Editar</button>
+            <button *ngIf="admin" class="btn mb-4" (click)="mostrarEditar(portada)"><i class="fa-solid fa-pencil me-3"></i>Editar</button>
         </div>
     </div>
 </div>

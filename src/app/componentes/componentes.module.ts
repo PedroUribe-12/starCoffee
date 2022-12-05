@@ -12,6 +12,12 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
+import { InputTextareaModule } from "primeng/inputtextarea";
+import { InputTextModule } from "primeng/inputtext";
+import { Seccion1Service } from '../servicios/seccion1.service';
+import { StorageService } from '../servicios/storage.service';
+import { Seccion1Component } from './seccion1/seccion1.component';
+import { Seccion3Component } from './seccion3/seccion3.component';
 import { AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { ProductosService } from '../servicios/productos.service';
@@ -22,6 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlmacenamientoSeccion2Service } from '../servicios/almacenamiento-seccion2.service';
 import { Seccion2Service } from '../servicios/seccion2.service';
 import { AlmacenamientoService } from '../servicios/almacenamiento.service';
+import { InicioSesionService } from '../servicios/inicio-sesion.service';
+
 
 
 @NgModule({
@@ -34,6 +42,8 @@ import { AlmacenamientoService } from '../servicios/almacenamiento.service';
     SeccionesComponent,
     HistoriaComponent,
     EventoComponent,
+    Seccion1Component,
+    Seccion3Component,
     InicioSesionComponent
   ],
   imports: [
@@ -41,6 +51,10 @@ import { AlmacenamientoService } from '../servicios/almacenamiento.service';
     RatingModule,
     FormsModule,
     CarouselModule,
+    ButtonModule,
+    DialogModule,
+    InputTextareaModule,
+    InputTextModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ButtonModule,
     DialogModule,
@@ -56,11 +70,20 @@ import { AlmacenamientoService } from '../servicios/almacenamiento.service';
     PortadaComponent,
     Seccion2Component,
     GaleriaComponent,
-    SeccionesComponent,
     HistoriaComponent,
     EventoComponent,
+    Seccion1Component,
+    Seccion3Component,
     InicioSesionComponent
   ],
-  providers:[ProductosService, AlmacenamientoSeccion2Service, Seccion2Service, AlmacenamientoService]
+  providers:[
+    Seccion1Service,
+    StorageService,
+    ProductosService,
+    InicioSesionService,
+    AlmacenamientoSeccion2Service,
+    Seccion2Service,
+    AlmacenamientoService
+  ]
 })
 export class ComponentesModule { }

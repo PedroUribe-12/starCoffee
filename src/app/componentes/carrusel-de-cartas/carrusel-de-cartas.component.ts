@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Producto } from 'src/app/modelos/producto';
 import { ProductosService } from 'src/app/servicios/productos.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -21,7 +21,7 @@ export class CarruselDeCartasComponent implements OnInit {
   productoSeleccionado!:Producto
   textoBoton!:string
   eliminarVisible=false;
-
+  @Input() admin:boolean=false;
 
   //Declaracion del FormGroup para el formulario reactivo
   nuevoProducto = new FormGroup({
@@ -30,10 +30,13 @@ export class CarruselDeCartasComponent implements OnInit {
     descripcion: new FormControl('', Validators.required),
     imagen: new FormControl('')
   })
+  //Metodo para mostrar el modal para agregar producto
   mostrarModal(){
     this.modalVisible= true
     this.textoBoton= "Agregar Producto"
+    console.log(this.admin)
   }
+  //Metodo para mostrar el modal para editar producto
   mostrarModalEditar(valor:boolean){
     this.modalVisible= valor
     this.textoBoton = "Editar Producto"
@@ -67,6 +70,7 @@ export class CarruselDeCartasComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    //Damos el valor a la coleccion de productos
     this.servicioProductos.obtenerProductos().subscribe(producto =>{
       this.productos = producto
     } )
@@ -143,6 +147,7 @@ export class CarruselDeCartasComponent implements OnInit {
       descripcion: this.nuevoProducto.value.descripcion!,
       imagen: this.nuevoProducto.value.imagen!
     }
+    //verifica si hay una imagen o no
     if(this.imagen===''){
       this.servicioProductos.editarProducto(this.productoSeleccionado.idProducto, nuevoProducto).then((resp)=>{
         alert('Producto Actualizado con exito')
@@ -180,6 +185,7 @@ export class CarruselDeCartasComponent implements OnInit {
     this.productoSeleccionado=producto
     console.log(this.productoSeleccionado)
   }
+  //Metodo para eliminar un producto
   eliminarProducto(){
     this.servicioProductos.eliminarProducto(this.productoSeleccionado.idProducto)
     .then((resp)=>{
