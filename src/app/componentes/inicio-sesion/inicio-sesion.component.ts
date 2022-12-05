@@ -14,6 +14,7 @@ export class InicioSesionComponent implements OnInit {
   registrar:boolean=false
   textoBoton='Iniciar Sesion'
   usuario:any
+  contra:any
   //Variables que se envian al componente padre
   @Output() admin = new EventEmitter<boolean>(false);
 
@@ -58,13 +59,14 @@ export class InicioSesionComponent implements OnInit {
     }else if(this.textoBoton === 'Iniciar Sesion'){
       this.authConEmail.iniciarSesion(this.datosUsuario.value.email, this.datosUsuario.value.contrasena)
       this.usuario = this.datosUsuario.value.email
+      this.contra = this.datosUsuario.value.contrasena
       this.verificarAdmin()
       this.limpiarFormulario()
     }
   }
   //Metodo para verificar que el usuario sea el admin predefinido
   verificarAdmin(){
-    if( this.usuario ==="josecarlosilafaya@gmail.com"){
+    if( this.usuario ==="josecarlosilafaya@gmail.com" && this.contra==='12345678'){
       this.admin.emit(true)
     }else if(this.usuario==undefined){
       this.admin.emit(false)
