@@ -1,16 +1,47 @@
 <!-- Creamos el contenedor -->
 <div class="container-fluid mt-5">
     <!-- Creamos la fila, ajustacemos el contenido al centro y le asignamos una posicion relativa-->
-    <div class="row position-relative d-flex justify-content-center align-items-center">
+    <div class="row position-relative d-flex justify-content-center align-items-center" *ngFor="let seccion2 of secciones2">
         <!-- Creamos la columna y ajustamos el contenido al centro -->
         <div class="col-12 d-flex justify-content-center">
-            <img src="../../../assets/imagenes/sirviendo_cafe.jpg" alt="Persona sirviendo cafe" class="img-fluid imagen">
+            <img src="{{seccion2.imagen}}" alt="Persona sirviendo cafe" class="img-fluid imagen">
         </div>
         <!-- Creamos el contenedor que almacenara la informacion, ademas de ajustar el contenido al centro-->
-        <div class="informacion d-flex justify-content-center">
-            <h1 class="mb-4">New Event</h1>
-            <h2 class="text-uppercase mb-4">turn up the heat on your next event.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam esse facilis voluptatum voluptate, laboriosam harum, nisi, excepturi similique distinctio placeat molestiae beatae repellat asperiores voluptatem!</p>
+        <div class="informacion d-flex justify-content-center col-md-12">
+            <h1 class="mb-4 text-break">{{seccion2.titulo}}</h1>
+            <h2 class="text-uppercase mb-4 text-break">{{seccion2.subtitulo}}</h2>
+            <p class="pe-lg-5 me-lg-5 text-break">{{seccion2.informacion}}</p>
+            <button *ngIf="admin" class="btn mb-4 boton-editar" (click)="mostrarEditar(seccion2)"><i class="fa-solid fa-pencil me-3"></i>Editar</button>
         </div>
     </div>
 </div>
+
+
+<p-dialog header="Cambiar Seccion2" [(visible)]="modalVisible" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+    <form [formGroup]="nuevaSeccion2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <img [src]="imagen" alt="no hay imagen" height="100em">
+                </div>
+                <div class="col-md-6 col-sm-12 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+                    <input type="email" class="form-control py-1 px-2" id="exampleFormControlInput1" formControlName="titulo" >
+                </div>
+                <div class="col-md-6 col-sm-12 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Subitulo</label>
+                    <input type="email" class="form-control py-1 px-2" id="exampleFormControlInput1" formControlName="subtitulo">
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">informacion</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" formControlName="informacion"></textarea><!--  -->
+                </div>
+                <input class="p-float-label mb-2" id="float-input" type="file" pInputText accept=".jpg, ·.png, ·,gif" (change)="cargarImagen($event)">
+            </div>
+            <div class="d-flex justify-content-end align-items-end">
+                <button class="btn boton-editar" (click)="cargarSeccion2()">Editar</button>
+            </div>
+        </div>
+    </form>
+</p-dialog> 

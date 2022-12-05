@@ -21,33 +21,39 @@
              
              <!-- formulario -->
 
-             <form>
+             <form [formGroup]="datosUsuario">
                  <div class="mb-4">
                      <label for="email" class="form-label texto">Correo Electronico</label>
-                     <input type="email" class="form-control" name="email">
+                     <input type="email" class="form-control" name="email" formControlName="email">
                  </div>
                  <div class="mb-4">
                      <label for="email" class="form-label  texto">Contraseña</label>
-                     <input type="password" class="form-control" name="password">
+                     <input type="password" class="form-control" name="password" formControlName="contrasena">
                  </div>
                  <div class="mb-4 form-check">
                      <input type="checkbox" name="conectado" class="form-check-input texto">
                      <label for="conectado" class="form-check-label texto">Recordarme</label>
                  </div>
                  <div class="d-grid">
-                     <button type="button" class="btn" routerLink="../../">Iniciar Sesión</button>
+                     <button type="button" class="btn" (click)="enviarDatos()" routerLink="../../">{{textoBoton}}</button>
                  </div>
-                 <div class="my-3  texto">
-                     <span>¿No tienes cuenta? <a routerLink="../registration">Registrarse</a></span> <br>
-                     <span><a routerLink="">Recuperar Contraseña</a></span>
+                 <div class="my-3 texto">
+                    <div *ngIf="iniciar===false">
+                        <span >¿Ya tienes cuenta? <a class="link-primary" (click)="iniciarVisible()">Iniciar Sesion</a></span> <br>
+                    </div>
+                    <div *ngIf="iniciar">
+                        <span>¿No tienes cuenta? <a class="link-primary" (click)="registrarVisible()">Registrarse</a></span> <br>
+                        <span><a class="link-primary">Recuperar Contraseña</a></span>
+                    </div>
+                     
                  </div>
              </form>
                 <!-- contenedor con las otras opciones de logueo -->
-             <div class="container w-100 my-3">
+             <!-- <div *ngIf="iniciar" class="container w-100 my-3">
                  <div class="row text-center  texto">
                      <div class="col-12">Iniciar Sesión con:</div>
                  </div>
-                 <!-- contenedor de los botones -->
+                  contenedor de los botones 
                  <div class="row">
                      <div class="col-sm-12 col-md-6">
                          <button class="btn w-100 my-1">
@@ -68,7 +74,7 @@
                          </button>
                      </div>
                  </div>
-             </div>
+             </div> -->
          </div>
      </div>
  </div> 

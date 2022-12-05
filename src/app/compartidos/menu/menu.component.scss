@@ -1,6 +1,7 @@
 /*En esta hoja aplicaremos los estilos que mostraran a menu*/
 /* asignamos el tamño del header*/
 /*El menu tine un efecto scrol que al scrolear en la pagina el fondo de trasparente cambia a tener un colo*/
+@import '../../../styles.scss';
 .header_menu{
     background: #0a0d1400;
     height: 70px;
@@ -9,27 +10,74 @@
     transition: .10s;
     z-index: 100;
 }
+.btn:hover{
+    background-color: $color-terciario;
+    color: $color-principal;
+}
 /*Se agrega la clase del efecto scroll*/
 header.abajo{
     background: #0A0D14;
     height: 75px;
     padding: 5px 10px;
     transition: .5s;
+ 
+    .nav-logo{
+        background: url("../../../assets/imagenes/logo_naranja.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 150px;
+        transition: .5s;
+     }
+ 
+     .nav_link_btn:hover{
+        background: #0a0d1400;
+        color: #D66B1D;
+        border: 1px solid #D66B1D;
+        transition: .5s;
+    }
+   
+    /*El estilo que van a tener los items, su color de letra*/
+    .nav_link_estilo {
+        color: #D66B1D;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: .5s;
+       
+       
+        position: relative;
+    }
+   
+    /*Vasvo a predefinir un efecto, que cuando nos coloquemos en uno de los items del menu, se despliegue un edecto con una linea debajo del texto*/
+    .nav_link_estilo:after {    
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #D66B1D;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
 }
 /* para ordenar los items del menu usaremos Flexboxs */
 .nav_cafe{
     display: flex;
     justify-content: space-between;
-
+ 
 }
 /* Asignamos el tamaño del logo */
-.logo{
-    height: 70px; 
-    padding: 4px 0;
+.nav-logo{
+   background: url("../../../assets/imagenes/logo_blanco.png");
+   background-repeat: no-repeat;
+   background-size: contain;
+   width: 150px;
+ 
 }
 /*Esta clase se va encargar de los items del menu*/
 .nav_menu{
-    /*desplegamos flex para que la lsita de items se expanda 
+    /*desplegamos flex para que la lsita de items se expanda
     horizontalmente  */
     display: flex;
     margin: 0;
@@ -37,13 +85,13 @@ header.abajo{
 }
 /*Esta clase se va encargar de los items de administracion, Iniciar Sesion, ubicacion, y redes*/
 .nav_administracion{
-     /*desplegamos flex para que la lsita de items se expanda 
+     /*desplegamos flex para que la lsita de items se expanda
     horizontalmente  */
     display: flex;
     margin: 0;
     list-style: none;
 }
-
+ 
 /*En esta clase asignamos la fuente el margne y cenramos los items de la lista*/
 .nav_links{
     font-size: 18px;
@@ -53,16 +101,16 @@ header.abajo{
    
     text-decoration: none;
 }
-
-
-/* los estilos de los botones del nav, su estilo y sus efectos 
+ 
+ 
+/* los estilos de los botones del nav, su estilo y sus efectos
 Este boton va a tener un efecto al pasar el puntero por el*/
 .nav_link_btn{
     background: #D66B1D;
     color: #0A0D14;
     text-decoration: none;
     padding: 0 10px;
-    
+   
     mix-blend-mode: normal;
     border: 1px solid #000000;
     text-transform: initial;
@@ -70,28 +118,28 @@ Este boton va a tener un efecto al pasar el puntero por el*/
     border-radius:black 30%;
     margin: 24px;
     transition: .5s;
-    
+   
 }
-
+ 
 /*Efecto hover, al posicionarnos en el botón su fondo y letras van a cambiar*/
 .nav_link_btn:hover{
     background: #0a0d1400;
     color: #D66B1D;
     border: 1px solid #D66B1D;
-    
+   
 }
-
+ 
 /*El estilo que van a tener los items, su color de letra*/
 .nav_link_estilo {
-    color: #D66B1D;
+    color: #ffffff;
     text-transform: uppercase;
     text-decoration: none;
    
-    
-    
+   
+   
     position: relative;
 }
-
+ 
 /*Vasvo a predefinir un efecto, que cuando nos coloquemos en uno de los items del menu, se despliegue un edecto con una linea debajo del texto*/
 .nav_link_estilo:after {    
     background: none repeat scroll 0 0 transparent;
@@ -101,20 +149,20 @@ Este boton va a tener un efecto al pasar el puntero por el*/
     height: 2px;
     left: 50%;
     position: absolute;
-    background: #D66B1D;
+    background: #ffffff;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
 }
-/*Cuando nos colquemos encima del item se ectendera 
+/*Cuando nos colquemos encima del item se ectendera
 la linea por el tecto*/
-.nav_link_estilo:hover:after { 
-    width: 100%; 
-    left: 0; 
+.nav_link_estilo:hover:after {
+    width: 100%;
+    left: 0;
 }
-
+ 
 /*El estilo del icono que se va a mostrar cuando se adapte a otro formato de pantalla mas chico*/
 .nav_toggle{
-
+ 
     color: white;
     background: none;
     font-size: 30px;
@@ -123,36 +171,36 @@ la linea por el tecto*/
     /*No lo desplegamos por a hora, porque tenemos que mostar los items*/
     display: none;
 }
-
-
+ 
+ 
 /*Empezamos a aplicar los estilos para la pagina Responsiva */
-@media (max-width: 768px){
-
+@media (max-width: 1076px){
+ 
     /*al ser responsivo el tamaño del header se achicara
     Y se e dara un color predefinido.
     Esto nos lleva a que el efecto scrol se utilizara para hacer sola una mini animacion*/
     .header_menu{
         background: #0a0d14;
         height: 55px;
-        
-    
+       
+   
     }
-    //Seguimos usando efecto scroll comoe n la version no reposiva */ 
+    //Seguimos usando efecto scroll comoe n la version no reposiva */
     header.abajo{
         background: #0A0D14;
         height: 55px;
         padding:0 15px;
         transition: .5s;
-        
+       
     }
-
+ 
     /*La clase hara que el menu al ser desplegable, se pueda hacer
     scrol en el si en necesario*/
     .nav_cafe{
        
         overflow-y: auto;
     }
-
+ 
     /*Le asiganmos un nuevo tamaño al logo del menu, cuando sea responsivo*/
     .logo{
         height: 55px;
@@ -180,14 +228,14 @@ la linea por el tecto*/
        left: 100%;
        transition: .2s;
     }
-
+ 
     /*Esta clase va a:
     *Al ordenar los items del menu en columna
     *Al ser responsivo los items se van a mostrar desde arriba hacia abajo
     *caudno se muestren se van a mostrar los itemes con un fondo de color
     *al usar metodo toggle el munu no se va a mostrar hasta hacer click en el boton hamburguesa*/
     .nav_administracion{
-        
+       
         flex-direction: column;
         margin: 0;
         list-style: none;
@@ -211,7 +259,7 @@ la linea por el tecto*/
     .nav_links{
         font-size: 18px;
         margin: 0;
-        
+       
         line-height: 90px;
         text-transform: uppercase;
        
@@ -225,11 +273,11 @@ la linea por el tecto*/
         text-transform: uppercase;
         text-decoration: none;
        
-        
-        
+       
+       
        
     }
-
+ 
     /*Estilo de los items al ser seleccionados:
     Al ser seleccionado el color del fondo cambiara y el de las letras tambein*/
     .nav_links:hover {
@@ -242,7 +290,7 @@ la linea por el tecto*/
     //las lines del los itmes desaparecen al ser responsivas
     .nav_link_estilo:after {    
         display:none;
-        
+       
     }
     /*boton de iniciar sesion predeterminado al ser responsivo*/
     .nav_resposive_btn{
@@ -255,7 +303,7 @@ la linea por el tecto*/
        
         text-transform: initial;
        
-        
+       
         margin:0;
         transition: .5s;
         .nav_link_btn{
@@ -263,7 +311,7 @@ la linea por el tecto*/
             border-radius: none;
         }
     }
-    
+   
     //bonot al ser seleccionado
     .nav_resposive_btn:hover{
         background: #282c35;
@@ -274,11 +322,11 @@ la linea por el tecto*/
             background: #282c35;
             color: #D66B1D;
         }
-        
+       
     }
     /* estilo para que se muestre el menu hamburguesa */
     .nav_toggle{
-        
+       
         color: #D66B1D;
         background: none;
         font-size: 30px;
@@ -286,7 +334,7 @@ la linea por el tecto*/
         line-height: 55px;
        display: block;
         border: none;
-        
+       
     }
    /*Esta clase va a ser usada en el momento en el que hagmos click en el boton toggle/hamburguesa
    Lo que desplazara los items en columnas*/
@@ -298,4 +346,3 @@ la linea por el tecto*/
         display: flex;
     }
 }
-
