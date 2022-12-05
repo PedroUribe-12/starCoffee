@@ -1,11 +1,11 @@
 <app-portada></app-portada>
-<app-carrusel-de-cartas></app-carrusel-de-cartas>
-<app-inicio-sesion></app-inicio-sesion>
-
+<app-carrusel-de-cartas [admin]="admin"></app-carrusel-de-cartas>
+<app-inicio-sesion (admin)="admin=$event"></app-inicio-sesion>
 <app-seccion2></app-seccion2>
 <app-secciones [imagenSeccion]="imagen1"  [tiuloSeccion]="titulo1" [esloganSeccion]="eslogan1" ></app-secciones>
 <app-evento></app-evento>
 <app-secciones [imagenSeccion]="imagen2" [tiuloSeccion]="titulo2" [esloganSeccion]="eslogan2" ></app-secciones>
 <app-galeria></app-galeria>
 <app-historia></app-historia>
+
 

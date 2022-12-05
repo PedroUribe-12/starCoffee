@@ -24,6 +24,7 @@ import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InicioSesionService } from '../servicios/inicio-sesion.service';
 
 
 @NgModule({
@@ -63,6 +64,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EventoComponent,
     InicioSesionComponent
   ],
-  providers:[ProductosService]
+  providers:[ProductosService, InicioSesionService]
 })
 export class ComponentesModule { }

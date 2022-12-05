@@ -15,7 +15,7 @@
                 </p-rating>
             </p>
             <!--Boton que llama a una accion-->
-            <a *ngIf="usuario" href="#" class="btn">Ver ingredientes</a>
+            <a *ngIf="admin==false" href="#" class="btn">Ver ingredientes</a>
             <div class="row" *ngIf="admin">
                 <div class="col">
                     <button pButton pRipple (click)="editarVisible=true" (click)="modalVisible()" type="button" icon="fa-solid fa-pen" class="p-button-rounded btn"></button>
