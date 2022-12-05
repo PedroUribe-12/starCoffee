@@ -1,24 +1,29 @@
-<!-- creamos un contenedor utilizando Bootstrap -->
-<div class="container-fluid">
-    <!-- creamos la fila -->
-    <div class="row" *ngFor="let portada of portadas">
-        <!-- Creamos las columna  de tamaño 7 que contendra la imagen-->
-        <div class="col-sm-12 col-md-7 contenedor_imagen">
-            <img src="{{portada.imagen}}" alt="" class="img-fluid imagen-portada">
-        </div>
-        <!-- Creamos las columna de tamaño 5 que contendra la información-->
-        <div class="col-sm-12 col-md-5 d-flex align-items-start justify-content-center flex-column informacion">
-            <h1 class="mb-3 text-break">{{portada.titulo}}</h1>
-            <h2 class="text-uppercase mb-5 text-break">{{portada.subtitulo}}</h2>
-            <button class="btn mb-4">Leer más</button>
-            <button *ngIf="admin" class="btn mb-4" (click)="mostrarEditar(portada)"><i class="fa-solid fa-pencil me-3"></i>Editar</button>
+
+<div *ngFor="let seccion3 of secciones3">
+    <!--creamos un contenedor-->
+    <div class="container-fluid secion mt-5">
+        <!-- Creamos la fila, ajustaremos el contenido al centro y le asignamos una posición relativa-->
+        <div class="row position-relative d-flex justify-content-center align-items-center">
+            <!-- Creamos una columna, ajustamos el contenido al inicio (a la izquierda) -->
+            <div class="col-12 d-flex justify-content-start">
+                <img [src]="seccion3.imagen" class="imagen" alt="imagen">
+            </div>
+            <!-- ajustamos el contenido al final (a la derecha) -->
+            <div class="informacion d-flex justify-content-end mb-3">
+                <div class="texto">
+                    <h5 class="text-break mb-4">{{seccion3.titulo}}</h5>
+                    <p class="text-break mb-4">{{seccion3.subtitulo}}</p>
+                
+                    <button *ngIf="admin" pButton pRipple type="button" class="p-button-rounded p-button-warning" (click)=" mostrarEditar(seccion3)"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar</button>            
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <p-dialog header="Cambiar Portada" [(visible)]="modalVisible" [modal]="true" [style]="{width: '50vw'}"
     [draggable]="false" [resizable]="false">
-    <form [formGroup]="nuevaPortada">
+    <form [formGroup]="nuevaSeccion3">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 d-flex justify-content-center align-items-center">
@@ -35,8 +40,10 @@
                 <input class="p-float-label mb-2" id="float-input" type="file" pInputText accept=".jpg, ·.png, ·,gif" (change)="cargarImagen($event)"><!--  -->
             </div>
             <div class="d-flex justify-content-end align-items-end">
-                <button class="btn boton-editar" (click)="cargarPortada()">Editar</button>
+                <button class="btn boton-editar" (click)="cargarSeccion3()">Editar</button>
             </div>
         </div>
     </form>
 </p-dialog>
+
+

@@ -12,19 +12,27 @@
     </div>
 </div> -->
 
+<!--creamos un contenedor-->
 <div class="container-fluid secion mt-5">
+    <!-- Creamos la fila, ajustaremos el contenido al centro y le asignamos una posición relativa-->
     <div class="row position-relative d-flex justify-content-center align-items-center">
+        <!-- Creamos una columna, ajustamos el contenido al inicio (a la izquierda) -->
         <div class="col-12 d-flex justify-content-start">
             <img [src]=imagenSeccion class="imagen" alt="defd">
         </div>
+        <!-- ajustamos el contenido al final (a la derecha) -->
         <div class="informacion d-flex justify-content-end mb-3">
             <div class="texto">
                 <h5>{{tiuloSeccion}}</h5>
                 <p>{{esloganSeccion}}</p>
+                
+               
+                   
+                <button pButton pRipple type="button" class="p-button-rounded p-button-warning" (click)="displayModal=true"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar  </button>
+                             
             </div>
         </div>
     </div>
 </div>
-
 
 
