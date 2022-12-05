@@ -15,7 +15,7 @@
                     <p class="text-break mb-4">{{seccion1.descripcion}}</p>
                 
                     <button *ngIf="admin" class="btn mb-4" (click)=" mostrarEditar(seccion1)"><i class="fa-solid fa-pencil me-3"></i>Editar</button><!--  -->
-                    <p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+                    <p-dialog header="Header" [(visible)]="modalVisible" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
                         [draggable]="false" [resizable]="false">
                         <!--Creamo el formulario y le agregaos el controlador-->
                         <form [formGroup]="actualizarSeccion">

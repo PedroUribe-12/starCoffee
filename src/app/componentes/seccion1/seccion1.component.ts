@@ -20,7 +20,7 @@ export class Seccion1Component implements OnInit {
   seccionSeleccionada:Seccion1
   //declaramos la interfas
   secciones1!: Seccion1[];
-  displayModal:Boolean= false
+  modalVisible:Boolean= false
 
   @Input() admin:boolean=false;
   //creamos el controlador del formulario
@@ -47,7 +47,7 @@ export class Seccion1Component implements OnInit {
   mostrarEditar(seccionSeleccionada:Seccion1){
 
     this.seccionSeleccionada = seccionSeleccionada
-    this.displayModal= true
+    this.modalVisible= true
     this.actualizarSeccion.setValue({
       titulo: seccionSeleccionada.titulo,
       descripcion: seccionSeleccionada.descripcion,
@@ -74,7 +74,7 @@ export class Seccion1Component implements OnInit {
         async url => {
           await this.servicioSeccion1.editarSeccion1(nuevaSeccion.idSeccion1, nuevaSeccion, url).then(sec=>{
             alert('Seecion Actualizada')
-            this.displayModal=false
+            this.modalVisible=false
           })
           .catch(error=>{
             alert('ocurrio un error')
@@ -85,16 +85,22 @@ export class Seccion1Component implements OnInit {
    }else{
     this.servicioSeccion1.editarSeccion1(nuevaSeccion.idSeccion1, nuevaSeccion, ).then(sec=>{
       alert('Seecion Actualizada sin imagen')
-      this.displayModal=false
+      this.modalVisible=false
     })
     .catch(error=>{
       alert('ocurrio un error\nError: ' + error)
     })
 
    }
+
+   this.imagen = undefined;
+
+  //Y luego modificara el valor del modalVisible a false, para que el modal se cierre
+  this.modalVisible = false;
    
   }
 
+  
 
   //creamos el metodo "cargarImagen" para poder obtener la url y nombre de la imagen
   cargarImagen(event:any){
