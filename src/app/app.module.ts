@@ -13,7 +13,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AlmacenamientoService } from './servicios/almacenamiento.service';
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -23,7 +22,7 @@ import { AlmacenamientoService } from './servicios/almacenamiento.service';
     AppRoutingModule,
     PaginasModule,
     CompartidosModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
     ReactiveFormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

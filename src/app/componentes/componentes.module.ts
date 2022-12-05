@@ -22,6 +22,7 @@ import { AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { ProductosService } from '../servicios/productos.service';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
+import { HistoriaService } from '../servicios/historia.service';
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,7 +30,6 @@ import { AlmacenamientoSeccion2Service } from '../servicios/almacenamiento-secci
 import { Seccion2Service } from '../servicios/seccion2.service';
 import { AlmacenamientoService } from '../servicios/almacenamiento.service';
 import { InicioSesionService } from '../servicios/inicio-sesion.service';
-
 
 
 @NgModule({
@@ -50,14 +50,13 @@ import { InicioSesionService } from '../servicios/inicio-sesion.service';
     CommonModule,
     RatingModule,
     FormsModule,
+    ReactiveFormsModule,
     CarouselModule,
     ButtonModule,
     DialogModule,
     InputTextareaModule,
     InputTextModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    ButtonModule,
-    DialogModule,
     BrowserAnimationsModule,
     BrowserModule,
     ReactiveFormsModule
@@ -76,6 +75,7 @@ import { InicioSesionService } from '../servicios/inicio-sesion.service';
     Seccion3Component,
     InicioSesionComponent
   ],
+
   providers:[
     Seccion1Service,
     StorageService,
@@ -83,7 +83,9 @@ import { InicioSesionService } from '../servicios/inicio-sesion.service';
     InicioSesionService,
     AlmacenamientoSeccion2Service,
     Seccion2Service,
-    AlmacenamientoService
+    AlmacenamientoService,
+    EventoService, 
+    HistoriaService
   ]
 })
 export class ComponentesModule { }
