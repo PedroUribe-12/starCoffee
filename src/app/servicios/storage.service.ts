@@ -59,7 +59,7 @@ export class StorageService {
     let referenciaImagen= ref(this.storage, urlImagen)
     deleteObject(referenciaImagen)
     .then(resp =>{
-      alert("la imagen fue eliminada con exito")
+      alert("Se actualizo la imagen")
 
     })
     .catch(err=>{

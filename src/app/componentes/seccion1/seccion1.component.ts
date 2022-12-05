@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Seccion1Service } from 'src/app/servicios/seccion1.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Seccion1 } from 'src/app/modelos/seccion1';
@@ -22,7 +22,7 @@ export class Seccion1Component implements OnInit {
   secciones1!: Seccion1[];
   displayModal:Boolean= false
 
-
+  @Input() admin:boolean=false;
   //creamos el controlador del formulario
   actualizarSeccion= new FormGroup({
     titulo: new FormControl('', Validators.required)!,

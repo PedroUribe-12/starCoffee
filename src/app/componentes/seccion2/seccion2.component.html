@@ -11,7 +11,7 @@
             <h1 class="mb-4 text-break">{{seccion2.titulo}}</h1>
             <h2 class="text-uppercase mb-4 text-break">{{seccion2.subtitulo}}</h2>
             <p class="pe-lg-5 me-lg-5 text-break">{{seccion2.informacion}}</p>
-            <button class="btn mb-4 boton-editar" (click)="mostrarEditar(seccion2)"><i class="fa-solid fa-pencil me-3"></i>Editar</button>
+            <button *ngIf="admin" class="btn mb-4 boton-editar" (click)="mostrarEditar(seccion2)"><i class="fa-solid fa-pencil me-3"></i>Editar</button>
         </div>
     </div>
 </div>
