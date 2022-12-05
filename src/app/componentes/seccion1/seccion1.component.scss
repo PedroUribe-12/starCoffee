@@ -1,3 +1,5 @@
+@import '../../../styles.scss';
+
 *{
     padding: 0;
     margin: 0;
@@ -25,6 +27,13 @@
 
 .texto{
     width: 35%;
+    button{
+        background-color: $color-secundario;
+        //Modificamos el color de la letra
+        color: $color-terciario;
+        //asignamos un padding 
+        padding:.5em 1.2em;
+    }
 }
 
 h5{
