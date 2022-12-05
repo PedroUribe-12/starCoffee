@@ -1,11 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent implements OnInit{
+
 
   //datos que le van a dar a un componente que esta usando input
     titulo1:string="Comidas"
@@ -16,8 +18,13 @@ export class InicioComponent implements OnInit{
     titulo2:string="Cafes"
     eslogan2:string="La mejor preparacion de cafes estan aca" //LAMEJOR PREPARACIÓN DE CAFES LA ENCONTRAS ACA
     imagen2:string='../../../assets/imagenes/maquinas-para-cafeteria.png'
+
   constructor() { }
+ 
 
   ngOnInit(): void {
+
+
   }
+
 }

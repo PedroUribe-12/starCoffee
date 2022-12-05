@@ -12,18 +12,24 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
-
+import { InputTextareaModule } from "primeng/inputtextarea";
+import { InputTextModule } from "primeng/inputtext";
+import {AngularFireModule} from '@angular/fire/compat'
+import { environment } from 'src/environments/environment';
+import { Seccion1Service } from '../servicios/seccion1.service';
+import { StorageService } from '../servicios/storage.service';
+import { Seccion1Component } from './seccion1/seccion1.component';
+import { Seccion3Component } from './seccion3/seccion3.component';
 import { AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { ProductosService } from '../servicios/productos.service';
 import { EventoService } from '../servicios/evento.service';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
-
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InicioSesionService } from '../servicios/inicio-sesion.service';
+
 
 
 @NgModule({
@@ -36,6 +42,8 @@ import { InicioSesionService } from '../servicios/inicio-sesion.service';
     SeccionesComponent,
     HistoriaComponent,
     EventoComponent,
+    Seccion1Component,
+    Seccion3Component,
     InicioSesionComponent
   ],
   imports: [
@@ -43,6 +51,10 @@ import { InicioSesionService } from '../servicios/inicio-sesion.service';
     RatingModule,
     FormsModule,
     CarouselModule,
+    ButtonModule,
+    DialogModule,
+    InputTextareaModule,
+    InputTextModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ButtonModule,
     DialogModule,
@@ -58,9 +70,15 @@ import { InicioSesionService } from '../servicios/inicio-sesion.service';
     PortadaComponent,
     Seccion2Component,
     GaleriaComponent,
-    SeccionesComponent,
     HistoriaComponent,
     EventoComponent,
+    Seccion1Component,
+    Seccion3Component
+  ],
+  providers:[
+    Seccion1Service,
+    StorageService
+  ]
     InicioSesionComponent
   ],
   providers:[ProductosService, InicioSesionService]
