@@ -14,8 +14,8 @@
                     <h5>{{seccion3.titulo}}</h5>
                     <p>{{seccion3.descripcion}}</p>
                 
-                    <button pButton pRipple type="button" class="p-button-rounded p-button-warning" (click)=" mostrarEditar(seccion3)"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar  </button>
-                    <p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+                    <button pButton pRipple type="button" class="p-button-rounded btn" (click)=" mostrarEditar(seccion3)"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar  </button>
+                    <p-dialog header="Editar Seccion" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
                         [draggable]="false" [resizable]="false">
                         <!--Creamo el formulario y le agregaos el controlador-->
                         <form [formGroup]="actualizarSeccion">
@@ -42,8 +42,8 @@
                     
                     
                             <ng-template pTemplate="footer">
-                                <p-button icon="pi pi-check" (click)="actualizar()"  label="Actualizar" class="p-button-text"></p-button>
-                                <p-button icon="pi pi-times" (click)="displayModal=false" label="No"></p-button>
+                                <button icon="pi pi-check" (click)="actualizar()" class="btn">Actualizar</button>
+                                
                             </ng-template>
                     </p-dialog>            
                 </div>

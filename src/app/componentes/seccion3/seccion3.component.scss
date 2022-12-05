@@ -1,3 +1,6 @@
+//importamos los colores de la pagina desde el style
+@import '../../../styles.scss';
+
 *{
     padding: 0;
     margin: 0;
@@ -24,7 +27,11 @@
 .texto{
     width: 35%;
 }
-
+.imagen_modal{
+    width: 100%;
+    object-fit: contain;
+    height: 20vh;
+}
 h5{
     font-style: normal;
     font-weight: 400;
@@ -40,6 +47,15 @@ p{
     color: #FFFFFF;
 }
 
+.btn{
+    background: $color-secundario;
+    color: #FFFFFF;
+    padding: 10px 25px;
+}
+.btn:hover{
+    background-color: #D66B1D;
+    border: #D66B1D;
+}
 
 /* -------------------------- Agregamos los estilos responsivos -------------------------- */
 @media screen and (max-width:1015px) {

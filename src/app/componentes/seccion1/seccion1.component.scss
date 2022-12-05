@@ -1,3 +1,6 @@
+//importamos los colores de la pagina desde el style
+@import '../../../styles.scss';
+
 *{
     padding: 0;
     margin: 0;
@@ -16,7 +19,8 @@
 
 .imagen_modal{
     width: 100%;
-    height: 50vh;
+    object-fit: contain;
+    height: 20vh;
 }
 .informacion{
     position: absolute;
@@ -42,6 +46,17 @@ p{
     color: #FFFFFF;
 }
 
+.btn{
+     //Modificamos su margen-top
+     margin-top: 1em;
+     //Modificamos su ancho
+     width: 8em;
+     background-color: $color-secundario;
+     //Modificamos el color de la letra
+     color: $color-terciario;
+     //asignamos un padding 
+     padding:.5em 1.2em;
+}
 
 /* -------------------------- Agregamos los estilos responsivos -------------------------- */
 @media screen and (max-width:1015px) {
