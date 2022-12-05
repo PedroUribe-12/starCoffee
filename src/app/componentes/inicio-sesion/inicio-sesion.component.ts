@@ -9,15 +9,21 @@ import { InicioSesionService } from 'src/app/servicios/inicio-sesion.service';
   styleUrls: ['./inicio-sesion.component.scss']
 })
 export class InicioSesionComponent implements OnInit {
+  //Declaracion de variables
   iniciar:boolean=true
   registrar:boolean=false
   textoBoton='Iniciar Sesion'
   usuario:any
+  //Variables que se envian al componente padre
   @Output() admin = new EventEmitter<boolean>(false);
+
+  //Valores del formulario
   datosUsuario = new FormGroup({
     email:new FormControl('',Validators.required),
     contrasena:new FormControl('',Validators.required)
   })
+
+  //inyeccion de los servicios
   constructor( private authConEmail:InicioSesionService, private firebaseAuth:AngularFireAuth) { }
   
   ngOnInit(): void {
@@ -30,17 +36,21 @@ export class InicioSesionComponent implements OnInit {
     // })
     // console.log(this.usuario)
   }
+  //Metodo para cambiar el formulario a iniciar sesion
   iniciarVisible(){
     this.iniciar=true
     this.textoBoton='Iniciar Sesion'
   }
+  //Metodo para cambiar el formulario a registrarse
   registrarVisible(){
     this.iniciar=false
     this.textoBoton='Registrarse'
   }
+  //Metodo para limpiar el formulario
   limpiarFormulario(){
     this.datosUsuario.reset()
   }
+  //Metodo que registra o inicia sesion a un usuario en base a una variable
    enviarDatos(){
     if(this.textoBoton==='Registrarse'){
       this.authConEmail.registro(this.datosUsuario.value.email, this.datosUsuario.value.contrasena)
@@ -52,6 +62,7 @@ export class InicioSesionComponent implements OnInit {
       this.limpiarFormulario()
     }
   }
+  //Metodo para verificar que el usuario sea el admin predefinido
   verificarAdmin(){
     if( this.usuario ==="josecarlosilafaya@gmail.com"){
       this.admin.emit(true)

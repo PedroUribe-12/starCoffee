@@ -2,9 +2,11 @@
     <!--Uso del componente carrusel de prime-->
     <p-carousel [showIndicators]="false" contentClass="text-center" [value]="productos"  [circular]="true" [autoplayInterval]="3000" [numVisible]="4" [numScroll]="1" [responsiveOptions]="responsiveOptions">
         <ng-template pTemplate="header">
+                <!-- Seccion del titulo-->
             <h5 class="titulo__seccion">Productos Destacados</h5>
             <button *ngIf="admin" pButton pRipple type="button" (click)="mostrarModal()" label="Nuevo Produto" icon="fa-solid fa-plus" class="p-button btn"></button>
         </ng-template>
+            <!-- Seccion de las cartas -->
         <ng-template let-producto pTemplate="item" >
             <app-carta-producto [admin]="admin" (productoEliminado)="mostrarEliminar($event)" (productoEnviado)="inputsEditar($event)" (mostrarModal)="mostrarModalEditar($event)" nombreProducto="{{producto.nombre}}" imagenProducto="{{producto.imagen}}"
             puntuacionProducto="{{producto.puntuacion}} " descripcionProducto="{{producto.descripcion}}" idProducto="{{producto.idProducto}}"></app-carta-producto>
@@ -12,6 +14,9 @@
     </p-carousel>    
 </div>
 
+<!-- Inicio de los modales -->
+
+<!-- Modal para agregar o editar un producto -->
 <p-dialog  [modal]="true" [draggable]="false" [resizable]="false" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"  header="{{textoBoton}}" [(visible)]="modalVisible" [style]="{width: '50vw'}">
     <form [formGroup]="nuevoProducto">
         <img [src]="imagen" alt="no hay imagen" width="150">
@@ -35,13 +40,14 @@
 
 </p-dialog>
 
+<!-- Modal para confirmar la eliminacion de un producto -->
 <p-dialog header="Eliminar" [(visible)]="eliminarVisible" [modal]="true" [style]="{width: '50vw'}" [draggable]="false"
     [resizable]="false">
     <p class="m-0">
         ¿Estas seguro de eliminar este producto?
     </p>
     <ng-template pTemplate="footer">
-        <p-button icon="pi pi-trash" (click)="eliminarVisible=false" (click)="eliminarProducto()" label="Eliminar" styleClass="p-button-text"></p-button>
-        <p-button icon="pi pi-check" (click)="eliminarVisible=false" label="Cancelar" styleClass="p-button-text"></p-button>
+        <p-button icon="fa-solid fa-trash-can" (click)="eliminarVisible=false" (click)="eliminarProducto()" label="Eliminar" styleClass="p-button-text"></p-button>
+        <p-button icon="fa-solid fa-ban" (click)="eliminarVisible=false" label="Cancelar" styleClass="p-button-text"></p-button>
     </ng-template>
 </p-dialog>

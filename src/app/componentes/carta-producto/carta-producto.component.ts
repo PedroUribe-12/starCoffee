@@ -7,12 +7,13 @@ import { Producto } from 'src/app/modelos/producto';
   styleUrls: ['./carta-producto.component.scss']
 })
 export class CartaProductoComponent implements OnInit {
+  //Declaracion de variables
   usuario=false;
   lectura=true;
   editarVisible=false;
   eliminarVisible=false
 
-  //Variables que le brindara el componente padre
+  //Variables que le brindara el componente padre y viceversa
   @Input() admin:boolean=false;
   @Input() nombreProducto:string='';
   @Input() imagenProducto:string='';
@@ -25,6 +26,8 @@ export class CartaProductoComponent implements OnInit {
   @Output() productoEliminado = new EventEmitter<Producto>();
 
   productoEdicion!:Producto
+
+  //Metodo para enviarle un valor al componente padre. En este caso para editar un producto
   modalVisible(){
     if(this.editarVisible==false){
       this.mostrarModal.emit(false)
@@ -33,6 +36,7 @@ export class CartaProductoComponent implements OnInit {
       this.productoEnviado.emit(this.productoEdicion)
     }
   }
+    //Metodo para enviarle un valor al componente padre. En este caso para eliminar un producto
   eliminar(){
     if(this.eliminarVisible==false){
       this.mostrarEliminar.emit(false)
