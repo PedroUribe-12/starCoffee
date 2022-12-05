@@ -7,7 +7,7 @@
                 <p> {{historias.descripcion}}</p>
                     <button pButton pRipple type="button" (click)="mostrarEditar(historias)" class="btn mb-4 boton-editar position-absolute ms-5" ><i class="pi pi-pencil p-1 " style="font-size: 1.5rem"></i>Editar  </button>
                   
-                    <p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+                    <p-dialog header="Editar Historia" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
                     [draggable]="false" [resizable]="false">
                     <!--Creamo el formulario y le agregaos el controlador-->
                     <form [formGroup]="actualizarHistoria">
@@ -24,7 +24,7 @@
                             
                         </div>
 
-                        <img [src]="historias.imagenHistoria" alt="actualizarImagen">
+                        <img [src]="historias.imagenHistoria" class="imagen_modal" alt="actualizarImagen">
                     </form>
                     
                     <ng-template pTemplate="footer">

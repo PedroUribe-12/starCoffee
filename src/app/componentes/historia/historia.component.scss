@@ -1,6 +1,7 @@
 //importamos los colores de la pagina desde el style
 @import '../../../styles.scss';
 .row{
+    //modificamos el fondo
     background:#262729 ;
 }
 .imagen{
@@ -49,6 +50,7 @@ button{
     margin-top: 1em;
     //Modificamos su ancho
     width: 8em;
+    //modificamos su fondo
     background-color: $color-secundario;
     //Modificamos el color de la letra
     color: $color-terciario;
@@ -154,4 +156,10 @@ button{
     /* .translate-middle {
         transform: translate(-50%,-300%)!important;
     } */
+}
+
+.imagen_modal{
+    width: 100%;
+    object-fit: contain;
+    height: 20vh;
 }
