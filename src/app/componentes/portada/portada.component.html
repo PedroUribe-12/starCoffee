@@ -1,16 +1,45 @@
 <!-- creamos un contenedor utilizando Bootstrap -->
 <div class="container-fluid">
     <!-- creamos la fila -->
-    <div class="row">
+    <div class="row" *ngFor="let portada of portadas">
         <!-- Creamos las columna  de tamaño 7 que contendra la imagen-->
         <div class="col-sm-12 col-md-7 contenedor_imagen">
-            <img src="../../../assets/portada/coffee1.jpg" alt="" class="img-fluid imagen-portada">
+            <img src="{{portada.imagen}}" alt="" class="img-fluid imagen-portada">
         </div>
         <!-- Creamos las columna de tamaño 5 que contendra la información-->
         <div class="col-sm-12 col-md-5 d-flex align-items-start justify-content-center flex-column informacion">
-            <h1 class="mb-3">Craft Coffee</h1>
-            <h2 class="text-uppercase mb-5">coffee makes us serve</h2>
+            <h1 class="mb-3">{{portada.titulo}}</h1>
+            <h2 class="text-uppercase mb-5">{{portada.subtitulo}}</h2>
             <button class="btn mb-4">Leer más</button>
+            <button class="btn mb-4" (click)="mostrarEditar(portada)"><i class="fa-solid fa-pencil me-3"></i>Editar</button>
         </div>
     </div>
 </div>
+
+<p-dialog header="Cambiar Portada" [(visible)]="modalVisible" [position]="position" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+    <form [formGroup]="nuevaPortada">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <img [src]="imagen" alt="no hay imagen" height="100em">
+                </div>
+                <div class="col-md-6 col-sm-12 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+                    <input type="email" class="form-control py-1 px-2" id="exampleFormControlInput1" formControlName="titulo" ><!-- -->
+                </div>
+                <div class="col-md-6 col-sm-12 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Subitulo</label>
+                    <input type="email" class="form-control py-1 px-2" id="exampleFormControlInput1" formControlName="subtitulo"><!--  -->
+                </div>
+                <input class="p-float-label mb-2" id="float-input" type="file" pInputText accept=".jpg, ·.png, ·,gif" (change)="cargarImagen($event)"><!--  -->
+            </div>
+            <div class="d-flex justify-content-end align-items-end">
+                <button class="btn boton-editar" (click)="cargarPortada()">Editar</button>
+            </div>
+        </div>
+    </form>
+        <!-- <ng-template pTemplate="footer">
+            <p-button icon="pi pi-check" (click)="displayPosition=false" label="Ok" styleClass="p-button-text"></p-button>
+        </ng-template> -->
+</p-dialog>

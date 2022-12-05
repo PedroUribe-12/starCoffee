@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortadaComponent } from './portada/portada.component';
 import { BrowserModule } from '@angular/platform-browser';
-
-
 import { CartaProductoComponent } from './carta-producto/carta-producto.component';
 import {RatingModule} from 'primeng/rating';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,6 +12,7 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
+import {DialogModule} from 'primeng/dialog';
 
 import { AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
@@ -51,7 +50,7 @@ import { InicioSesionService } from '../servicios/inicio-sesion.service';
     BrowserAnimationsModule,
     BrowserModule,
     ReactiveFormsModule
-    ],
+  ],
   exports:[
   //Exportamos los componentes
     PortadaComponent,
