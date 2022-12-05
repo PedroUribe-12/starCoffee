@@ -4,25 +4,26 @@ import {getStorage, uploadString, ref, UploadResult, getDownloadURL, deleteObjec
 @Injectable({
   providedIn: 'root'
 })
-export class StorageService {
+export class StorageHistoriaService {
 
-  private respuesta:UploadResult
-  private respuestaS3:UploadResult
+  private respuesta!:UploadResult
+
   private storage = getStorage() //obtenemos referencia al storage
   constructor() { }
 
-  async subirImagenaSeccion3(nombre:string, imagen:any){ 
+  //creamos metodo para subir la imagen
+  async subirImagen(nombre:string, imagen:any){ 
     try{
-      let referenciaImagen = ref(this.storage, 'seccion3/' +nombre) //toma como referencia en que lugar se va a gurardar la imagen y su nombre
-      this.respuestaS3= await uploadString(referenciaImagen, imagen, 'data_url')//creo la variable donde se va a guardar la imagen
+      let referenciaImagen = ref(this.storage, 'historia/' +nombre) //toma como referencia en que lugar se va a gurardar la imagen y su nombre
+      this.respuesta= await uploadString(referenciaImagen, imagen, 'data_url')//creo la variable donde se va a guardar la imagen
       .then(res=>{
         return res
       })
-      return this.respuestaS3
+      return this.respuesta
     }
     catch(error){
       console.log(error)
-      return this.respuestaS3
+      return this.respuesta
     }
   }
 
@@ -31,23 +32,15 @@ export class StorageService {
     return getDownloadURL (respuesta.ref) //nos dvuelve la url de la imagen con firestore con la funcion "getDownloadURL"
   }
 
-
-  //creamos el metodo para obtener la url del storage
-  obtenerUrlSeccion3(respuestaS3:UploadResult){
-    return getDownloadURL (respuestaS3.ref) //nos dvuelve la url de la imagen con firestore con la funcion "getDownloadURL"
-  }
-
-
   deleteImagen(urlImagen:string){
     let referenciaImagen= ref(this.storage, urlImagen)
     deleteObject(referenciaImagen)
     .then(resp =>{
-      alert("Se actualizo la imagen")
+      alert("la imagen fue eliminada con exito")
+
     })
     .catch(err=>{
       alert("no se pudo subir la imagen. Errro: " +err)
     })
   }
-
 }
-
