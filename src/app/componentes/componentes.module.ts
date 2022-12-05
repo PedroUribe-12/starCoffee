@@ -14,8 +14,6 @@ import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { InputTextModule } from "primeng/inputtext";
-import {AngularFireModule} from '@angular/fire/compat'
-import { environment } from 'src/environments/environment';
 import { Seccion1Service } from '../servicios/seccion1.service';
 import { StorageService } from '../servicios/storage.service';
 import { Seccion1Component } from './seccion1/seccion1.component';
@@ -73,14 +71,14 @@ import { InicioSesionService } from '../servicios/inicio-sesion.service';
     HistoriaComponent,
     EventoComponent,
     Seccion1Component,
-    Seccion3Component
+    Seccion3Component,
+    InicioSesionComponent
   ],
   providers:[
     Seccion1Service,
-    StorageService
+    StorageService,
+    ProductosService,
+    InicioSesionService
   ]
-    InicioSesionComponent
-  ],
-  providers:[ProductosService, InicioSesionService]
 })
 export class ComponentesModule { }
