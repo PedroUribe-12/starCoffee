@@ -2,11 +2,13 @@
     <div class="row">
         <div class="col-12 col-md-6 texto__evento d-flex justify-content-center pb-4">
             <!--Titulo de la seccion-->
-            <h1 class="titulo__seccion">{{evento.tituloSeccion}}</h1>
+            <h1 class="titulo__seccion text-break">{{evento.tituloSeccion}}</h1>
             <!--Titulo del evento-->
-            <h1 class="titulo text-uppercase">{{evento.titulo}}</h1>
+            <h1 class="titulo text-uppercase text-break">{{evento.titulo}}</h1>
             <!--Detalles del evento-->
-            <p class="h5 mt-4 pe-lg-5 me-lg-5">{{evento.descripcion}}</p>
+            <p class="h5 mt-4 pe-lg-5 me-lg-5 text-break">{{evento.descripcion}}</p>
+            <!--Boton para activar el modal-->
+            <button class="btn mb-4"><i class="fa-solid fa-pencil me-3"></i>Editar</button><!-- (click)="mostrarEditar(portada)" -->
         </div>
         <div class="col-12 col-md-6">
             <!--Contenedor de las imagenes del evento-->

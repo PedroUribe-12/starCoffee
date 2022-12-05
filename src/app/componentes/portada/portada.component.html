@@ -8,15 +8,15 @@
         </div>
         <!-- Creamos las columna de tamaño 5 que contendra la información-->
         <div class="col-sm-12 col-md-5 d-flex align-items-start justify-content-center flex-column informacion">
-            <h1 class="mb-3">{{portada.titulo}}</h1>
-            <h2 class="text-uppercase mb-5">{{portada.subtitulo}}</h2>
+            <h1 class="mb-3 text-break">{{portada.titulo}}</h1>
+            <h2 class="text-uppercase mb-5 text-break">{{portada.subtitulo}}</h2>
             <button class="btn mb-4">Leer más</button>
             <button *ngIf="admin" class="btn mb-4" (click)="mostrarEditar(portada)"><i class="fa-solid fa-pencil me-3"></i>Editar</button>
         </div>
     </div>
 </div>
 
-<p-dialog header="Cambiar Portada" [(visible)]="modalVisible" [position]="position" [modal]="true" [style]="{width: '50vw'}"
+<p-dialog header="Cambiar Portada" [(visible)]="modalVisible" [modal]="true" [style]="{width: '50vw'}"
     [draggable]="false" [resizable]="false">
     <form [formGroup]="nuevaPortada">
         <div class="container-fluid">
@@ -39,7 +39,4 @@
             </div>
         </div>
     </form>
-        <!-- <ng-template pTemplate="footer">
-            <p-button icon="pi pi-check" (click)="displayPosition=false" label="Ok" styleClass="p-button-text"></p-button>
-        </ng-template> -->
 </p-dialog>

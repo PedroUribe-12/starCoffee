@@ -21,11 +21,13 @@ import { Seccion3Component } from './seccion3/seccion3.component';
 import { AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { ProductosService } from '../servicios/productos.service';
-import { EventoService } from '../servicios/evento.service';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlmacenamientoSeccion2Service } from '../servicios/almacenamiento-seccion2.service';
+import { Seccion2Service } from '../servicios/seccion2.service';
+import { AlmacenamientoService } from '../servicios/almacenamiento.service';
 import { InicioSesionService } from '../servicios/inicio-sesion.service';
 
 
@@ -78,7 +80,10 @@ import { InicioSesionService } from '../servicios/inicio-sesion.service';
     Seccion1Service,
     StorageService,
     ProductosService,
-    InicioSesionService
+    InicioSesionService,
+    AlmacenamientoSeccion2Service,
+    Seccion2Service,
+    AlmacenamientoService
   ]
 })
 export class ComponentesModule { }

@@ -62,3 +62,15 @@
         margin: 0.5em 0 0.5em 0;
     }
 }
+
+button{
+    //Modificamos su margen-top
+    margin-top: 1em;
+    //Modificamos su ancho
+    width: 8em;
+    background-color: $color-secundario;
+    //Modificamos el color de la letra
+    color: $color-terciario;
+    //asignamos un padding 
+    padding:.5em 1.2em;
+}
