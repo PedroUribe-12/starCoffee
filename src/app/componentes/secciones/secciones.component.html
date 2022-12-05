@@ -27,55 +27,9 @@
                 <p>{{esloganSeccion}}</p>
                 
                
-
-                <!--Hacemo un modal que se va a mostrar cuando se haga click en editar-->
-                <p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
-                    [draggable]="false" [resizable]="false">
-                    <!--Creamo el formulario y le agregaos el controlador-->
-                    <form [formGroup]="actualizarSeccion">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Agregar titulo</label>
-                            <input type="text" class="form-control form-control-lg p-2" id="exampleFormControlInput1" formControlName="titulo">
-                        </div>
-                        
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Agregar el eslogan</label>
-                            <textarea class="form-control  p-2" id="exampleFormControlTextarea1" rows="3" formControlName="descripcion"></textarea>
-                        </div>  
-
-
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Agregar Imagen</label>
-                            <input type="file" class="form-control form-control-lg p-2" id="exampleFormControlInput1"  placeholder="imagen" accept=".jpg, .png, .gif" (change)="cargarImagen($event)">
-                            
-                        </div>
-
-                        <img [src]=imagenSeccion alt="actualizarImagen">
-                    </form>
                    
-                   
-                 
-                        <ng-template pTemplate="footer">
-                            <p-button icon="pi pi-check" (click)="actualizar()"  label="Actualizar" class="p-button-text"></p-button>
-                            <p-button icon="pi pi-times" (click)="displayModal=false" label="No"></p-button>
-                        </ng-template>
-                </p-dialog>
-                
-                    
-                    
-               
-
-                
-                <div *ngFor="let seccion1 of secciones1">
-                   
-                    <button pButton pRipple type="button" class="p-button-rounded p-button-warning" (click)=" mostrarEditar(seccion1)" ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar  </button>
-                  
-                </div>
-              
-                
-                
-                
-              
+                <button pButton pRipple type="button" class="p-button-rounded p-button-warning" (click)="displayModal=true"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar  </button>
+                             
             </div>
         </div>
     </div>

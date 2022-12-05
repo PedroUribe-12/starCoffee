@@ -23,6 +23,8 @@ import { environment } from 'src/environments/environment';
 
 import { Seccion1Service } from '../servicios/seccion1.service';
 import { StorageService } from '../servicios/storage.service';
+import { Seccion1Component } from './seccion1/seccion1.component';
+import { Seccion3Component } from './seccion3/seccion3.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { StorageService } from '../servicios/storage.service';
     GaleriaComponent,
     SeccionesComponent,
     HistoriaComponent,
-    EventoComponent
+    EventoComponent,
+    Seccion1Component,
+    Seccion3Component
   ],
   imports: [
     CommonModule,
@@ -57,9 +61,11 @@ import { StorageService } from '../servicios/storage.service';
     PortadaComponent,
     Seccion2Component,
     GaleriaComponent,
-    SeccionesComponent,
+    
     HistoriaComponent,
-    EventoComponent
+    EventoComponent,
+    Seccion1Component,
+    Seccion3Component
   ],
   providers:[
     Seccion1Service,

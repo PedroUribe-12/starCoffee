@@ -18,7 +18,10 @@ export class Seccion3Service {
     return this.colleciciondeSeccion3.snapshotChanges().pipe(map(action=>action.map(a=>a.payload.doc.data())));
   }
   
-  editarSeccion3(idSeccion3:string, nuevosDatos:Seccion3){
+  editarSeccion3(idSeccion3:string, nuevosDatos:Seccion3, url?:string){
+    if(url){
+      nuevosDatos.imagen = url
+    }
     return this.colleciciondeSeccion3.doc(idSeccion3).update(nuevosDatos)
   }
 
