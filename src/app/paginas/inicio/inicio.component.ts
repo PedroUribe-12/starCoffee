@@ -20,8 +20,4 @@ export class InicioComponent implements OnInit{
 
   ngOnInit(): void {
   }
-  mostrarAdmin(){
-    console.log(this.admin)
-  }
-
 }

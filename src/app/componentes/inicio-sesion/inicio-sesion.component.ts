@@ -55,7 +55,6 @@ export class InicioSesionComponent implements OnInit {
   verificarAdmin(){
     if( this.usuario ==="josecarlosilafaya@gmail.com"){
       this.admin.emit(true)
-      console.log(this.usuario)
     }else if(this.usuario==undefined){
       this.admin.emit(false)
     }
