@@ -6,7 +6,6 @@ import {getStorage, uploadString, ref, UploadResult, getDownloadURL, deleteObjec
 })
 export class StorageService {
 
-  private respuesta:UploadResult
   private respuestaS3:UploadResult
   private storage = getStorage() //obtenemos referencia al storage
   constructor() { }

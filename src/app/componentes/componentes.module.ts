@@ -30,6 +30,7 @@ import { AlmacenamientoSeccion2Service } from '../servicios/almacenamiento-secci
 import { Seccion2Service } from '../servicios/seccion2.service';
 import { AlmacenamientoService } from '../servicios/almacenamiento.service';
 import { InicioSesionService } from '../servicios/inicio-sesion.service';
+import { EventoService } from '../servicios/evento.service';
 
 
 @NgModule({
