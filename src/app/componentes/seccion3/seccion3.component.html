@@ -1,5 +1,5 @@
 
-<div *ngFor="let seccion3 of seciones3">
+<div *ngFor="let seccion3 of secciones3">
     <!--creamos un contenedor-->
     <div class="container-fluid secion mt-5">
         <!-- Creamos la fila, ajustaremos el contenido al centro y le asignamos una posición relativa-->
@@ -11,46 +11,39 @@
             <!-- ajustamos el contenido al final (a la derecha) -->
             <div class="informacion d-flex justify-content-end mb-3">
                 <div class="texto">
-                    <h5>{{seccion3.titulo}}</h5>
-                    <p>{{seccion3.descripcion}}</p>
+                    <h5 class="text-break mb-4">{{seccion3.titulo}}</h5>
+                    <p class="text-break mb-4">{{seccion3.subtitulo}}</p>
                 
-                    <button pButton pRipple type="button" class="p-button-rounded p-button-warning" (click)=" mostrarEditar(seccion3)"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar  </button>
-                    <p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
-                        [draggable]="false" [resizable]="false">
-                        <!--Creamo el formulario y le agregaos el controlador-->
-                        <form [formGroup]="actualizarSeccion">
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Agregar titulo</label>
-                                <input type="text" class="form-control form-control-lg p-2" id="exampleFormControlInput1" formControlName="titulo">
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">Agregar el eslogan</label>
-                                <textarea class="form-control  p-2" id="exampleFormControlTextarea1" rows="3" formControlName="descripcion"></textarea>
-                            </div>  
-
-
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Agregar Imagen</label>
-                                <input type="file" class="form-control form-control-lg p-2" id="exampleFormControlInput1" formControlName="imagen" placeholder="imagen" accept=".jpg, .png, .gif" (change)="cargarImagen($event)">
-                                
-                            </div>
-
-                            <img [src]="seccion3.imagen" class="imagen_modal" alt="actualizarImagen">
-                        </form>
-                    
-                    
-                    
-                            <ng-template pTemplate="footer">
-                                <p-button icon="pi pi-check" (click)="actualizar()"  label="Actualizar" class="p-button-text"></p-button>
-                                <p-button icon="pi pi-times" (click)="displayModal=false" label="No"></p-button>
-                            </ng-template>
-                    </p-dialog>            
+                    <button *ngIf="admin" pButton pRipple type="button" class="p-button-rounded p-button-warning" (click)=" mostrarEditar(seccion3)"  ><i class="pi pi-pencil p-2 " style="font-size: 1.5rem"></i>Editar</button>            
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<p-dialog header="Cambiar Portada" [(visible)]="modalVisible" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+    <form [formGroup]="nuevaSeccion3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <img [src]="imagen" alt="no hay imagen" height="100em">
+                </div>
+                <div class="col-md-6 col-sm-12 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+                    <input type="email" class="form-control py-1 px-2" id="exampleFormControlInput1" formControlName="titulo" ><!-- -->
+                </div>
+                <div class="col-md-6 col-sm-12 mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Subitulo</label>
+                    <input type="email" class="form-control py-1 px-2" id="exampleFormControlInput1" formControlName="subtitulo"><!--  -->
+                </div>
+                <input class="p-float-label mb-2" id="float-input" type="file" pInputText accept=".jpg, ·.png, ·,gif" (change)="cargarImagen($event)"><!--  -->
+            </div>
+            <div class="d-flex justify-content-end align-items-end">
+                <button class="btn boton-editar" (click)="cargarSeccion3()">Editar</button>
+            </div>
+        </div>
+    </form>
+</p-dialog>
 
 

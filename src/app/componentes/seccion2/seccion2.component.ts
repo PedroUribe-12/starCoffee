@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Seccion2 } from 'src/app/modelos/seccion2';
 import { AlmacenamientoSeccion2Service } from 'src/app/servicios/almacenamiento-seccion2.service';
 import { Seccion2Service } from 'src/app/servicios/seccion2.service';
@@ -18,6 +18,8 @@ modalVisible: boolean = false;
 
 //Creamos la propiedad imagen que sera opcionalmente de tipo string
 imagen?: string;
+
+@Input() admin:boolean=false;
 
 //Creamos la propiedad seccion2Seleccionada de tipo Seccion2 que si o si se le debera asignar un valor más tarde
 seccion2Seleccionada!:Seccion2;
