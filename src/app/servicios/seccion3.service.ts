@@ -7,10 +7,9 @@ import { Seccion3 } from '../modelos/seccion3';
 })
 export class Seccion3Service {
 
-
   private colleciciondeSeccion3: AngularFirestoreCollection<Seccion3>
 
-  constructor(db:AngularFirestore) {          
+ constructor(db:AngularFirestore) {
     this.colleciciondeSeccion3= db.collection('seccion3')
   }
 
