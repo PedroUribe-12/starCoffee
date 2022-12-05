@@ -19,7 +19,10 @@ export class HistoriaService {
     return this.colleccionHistoria.snapshotChanges().pipe(map(action => action.map(a => a.payload.doc.data())));
   }
 
-  editarHistoria(idHistoria:string, nuevosDatos:Historia){
+  editarHistoria(idHistoria:string, nuevosDatos:Historia, url?:string){
+    if(url){
+      nuevosDatos.imagenHistoria = url
+    }
     return this.colleccionHistoria.doc(idHistoria).update(nuevosDatos)
   }
 }

@@ -5,7 +5,8 @@
             <div class="historia">
                 <h3>Historia</h3>
                 <p> {{historias.descripcion}}</p>
-                    <button pButton pRipple type="button" (click)="mostrarEditar(historias)" class="p-button-rounded p-button-warning position-absolute ms-5"  ><i class="pi pi-pencil p-1 " style="font-size: 1.5rem"></i>Editar  </button>
+                    <button pButton pRipple type="button" (click)="mostrarEditar(historias)" class="btn mb-4 boton-editar position-absolute ms-5" ><i class="pi pi-pencil p-1 " style="font-size: 1.5rem"></i>Editar  </button>
+                  
                     <p-dialog header="Header" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
                     [draggable]="false" [resizable]="false">
                     <!--Creamo el formulario y le agregaos el controlador-->
@@ -19,7 +20,7 @@
 
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Agregar Imagen</label>
-                            <input type="file" class="form-control form-control-lg p-2" id="exampleFormControlInput1"  placeholder="imagen" accept=".jpg, .png, .gif" (change)="cargarImagen($event)">
+                            <input type="file" class="form-control form-control-lg p-2" id="exampleFormControlInput1" accept=".jpg, .png, .gif" (change)="cargarImagen($event)">
                             
                         </div>
 
@@ -27,8 +28,7 @@
                     </form>
                     
                     <ng-template pTemplate="footer">
-                        <p-button icon="pi pi-check" (click)="actualizar()"  label="Actualizar" class="p-button-text"></p-button>
-                        <p-button icon="pi pi-times" (click)="displayModal=false" label="No"></p-button>
+                        <button icon="pi pi-check" (click)="actualizar()" (click)="displayModal=false"  class="btn boton-editar">actualizar</button>
                     </ng-template>
                     </p-dialog>
             </div> 

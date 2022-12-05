@@ -1,3 +1,5 @@
+//importamos los colores de la pagina desde el style
+@import '../../../styles.scss';
 .row{
     background:#262729 ;
 }
@@ -42,6 +44,17 @@
     position: relative;
 }
 
+button{
+    //Modificamos su margen-top
+    margin-top: 1em;
+    //Modificamos su ancho
+    width: 8em;
+    background-color: $color-secundario;
+    //Modificamos el color de la letra
+    color: $color-terciario;
+    //asignamos un padding 
+    padding:.5em 1.2em;
+}
 
 
 /* -------------------------- Agregamos los estilos responsivos -------------------------- */
@@ -91,6 +104,10 @@
         justify-content: center;
         position: relative;
         
+    }
+
+    button{
+        margin-left: 5em;
     }
 }
 @media screen and (max-width:769px) {
