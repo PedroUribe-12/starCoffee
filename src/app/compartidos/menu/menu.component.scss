@@ -1,6 +1,7 @@
 /*En esta hoja aplicaremos los estilos que mostraran a menu*/
 /* asignamos el tamño del header*/
 /*El menu tine un efecto scrol que al scrolear en la pagina el fondo de trasparente cambia a tener un colo*/
+@import '../../../styles.scss';
 .header_menu{
     background: #0a0d1400;
     height: 70px;
@@ -8,6 +9,10 @@
     width: 100%;
     transition: .10s;
     z-index: 100;
+}
+.btn:hover{
+    background-color: $color-terciario;
+    color: $color-principal;
 }
 /*Se agrega la clase del efecto scroll*/
 header.abajo{
@@ -20,7 +25,7 @@ header.abajo{
         background: url("../../../assets/imagenes/logo_naranja.png");
         background-repeat: no-repeat;
         background-size: contain;
-        width: 210px;
+        width: 150px;
         transition: .5s;
      }
  
@@ -67,7 +72,7 @@ header.abajo{
    background: url("../../../assets/imagenes/logo_blanco.png");
    background-repeat: no-repeat;
    background-size: contain;
-   width: 210px;
+   width: 150px;
  
 }
 /*Esta clase se va encargar de los items del menu*/

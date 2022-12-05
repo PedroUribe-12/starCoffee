@@ -12,7 +12,6 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { SeccionesComponent } from './secciones/secciones.component';
 import { HistoriaComponent } from './historia/historia.component';
 import { EventoComponent } from './evento/evento.component';
-import {DialogModule} from 'primeng/dialog';
 
 import { AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';

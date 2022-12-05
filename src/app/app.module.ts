@@ -24,12 +24,10 @@ import { AlmacenamientoService } from './servicios/almacenamiento.service';
     CompartidosModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    AngularFireAuthModule
-  ],
-  providers: [InicioSesionService],
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  providers: [PortadaService, AlmacenamientoService],
+  providers: [InicioSesionService,PortadaService, AlmacenamientoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
