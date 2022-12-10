@@ -21,6 +21,13 @@ export class MenuComponent implements OnInit {
     //Le declaramos a "menu2" la clase ".nav_administracion"
     const menu2= document.querySelector(".nav_administracion")
 
+    const linkMenu= document.getElementById("link1"), linkMenu2= document.getElementById("link2"),linkMenu3= document.getElementById("link3")  
+    const linkMenu4 = document.getElementById("link4"), linkMenu5 = document.getElementById("link5")
+    const links=[linkMenu,linkMenu2,linkMenu3,linkMenu4]
+    links.forEach(link => link?.addEventListener("click",function(){
+      menu?.classList.toggle("nav_menu_visible")
+      menu2?.classList.toggle("nav_menu_visible")
+    }))
     //a "btnmenu" le asignamos un evento "click" que va a accionar una funcion
     //esta funcion va a hacer visble la lista de los items
     //Esta accion solo va a poder ser realizada cuando la pagina se encuentre en formato de dispositivo movil
@@ -28,9 +35,8 @@ export class MenuComponent implements OnInit {
       menu?.classList.toggle("nav_menu_visible")
       menu2?.classList.toggle("nav_menu_visible")
     })
-
-    //medotodo scrol
-    //al hacer un scrol habara un evento, que llamar a un metodo
+    //método scroll
+    //al hacer un scroll abrirá un evento, que llamar a un metodo
     window.addEventListener("scroll", function(){
       //este metodo nos va a declarar la variable "header" con la clase "header" 
       var header = document.querySelector("header")

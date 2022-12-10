@@ -5,23 +5,27 @@
      
       <!-- creamos una lista de items que seran los items que nos llevaran a diferentes partes de la pagina -->
       <ul class="nav_menu" >
-        <li class="nav_links"><a class="nav_link_estilo" href="#productos">Productos</a></li>
-        <li class="nav_links"><a class="nav_link_estilo" href="#eventos">Eventos</a></li>
+        <li class="nav_links"><a id="link1" class="nav_link_estilo" routerLink fragment="productos" routerLinkActive="'active'"
+          [routerLinkActiveOptions]="{exact: true}">Productos</a></li>
+        <li class="nav_links"><a id="link2" class="nav_link_estilo" routerLink fragment="evento" routerLinkActive="'active'"
+          [routerLinkActiveOptions]="{exact: true}">Eventos</a></li>
         <!-- <li class="nav_links"><a class="nav_link_estilo" href="">Especialidades</a></li> -->
-        <li class="nav_links"><a class="nav_link_estilo" href="#historia">Historia</a></li>
+        <li class="nav_links"><a id="link3" class="nav_link_estilo" routerLink fragment="historia" routerLinkActive="'active'"
+          [routerLinkActiveOptions]="{exact: true}">Historia</a></li>
       </ul>
       <!-- creamos la etiqueta a con una imagen dentro que nos llevara al home de la pagina web -->
       
-      <a href="" class="nav-logo" id="logo">
-        
-      </a>
+      <a routerLink fragment="portada" routerLinkActive="'active'"
+      [routerLinkActiveOptions]="{exact: true}" class="nav-logo" id="logo"></a>
       <!-- creamos una lista de items que seran los items que se encargaran de iniciar y cerrar sesion y administarla pagina -->
       <ul class="nav_administracion" >
         <li class="nav_links"><a class="nav_link_estilo" style="font-size:22px;" href=""><i class="fa-brands fa-github"></i></a></li>
-        <li class="nav_links"><a class="nav_link_estilo" href="#galeria">Galeria</a></li>
-        <li class="nav_links nav_resposive_btn"><a class="btn" href="#login">Iniciar Sesion</a></li>
+        <li class="nav_links"><a id="link4" class="nav_link_estilo" routerLink fragment="galeria" routerLinkActive="'active'"
+          [routerLinkActiveOptions]="{exact: true}">Galería</a></li>
+        <li class="nav_links nav_resposive_btn"><a id="link5" class="btn" routerLink fragment="login" routerLinkActive="'active'"
+          [routerLinkActiveOptions]="{exact: true}">Iniciar Sesión</a></li>
       </ul>
-      <!-- El boton hamburguesa que solo aparecera cuando la pagina lo requiera -->
+      <!-- El boton hamburguesa que solo aparecerá cuando la pagina lo requiera -->
       <button class="nav_toggle">
         <i class="fa-solid fa-bars"></i>
       </button>
