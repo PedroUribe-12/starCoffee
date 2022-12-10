@@ -5,12 +5,16 @@
      
       <!-- creamos una lista de items que seran los items que nos llevaran a diferentes partes de la pagina -->
       <ul class="nav_menu" >
-        <li class="nav_links"><a id="link1" class="nav_link_estilo" routerLink fragment="productos" routerLinkActive="'active'"
+        <li id="link1" class="nav_links" routerLink fragment="productos" routerLinkActive="'active'"
+        [routerLinkActiveOptions]="{exact: true}"><a  class="nav_link_estilo" routerLink fragment="productos" routerLinkActive="'active'"
           [routerLinkActiveOptions]="{exact: true}">Productos</a></li>
-        <li class="nav_links"><a id="link2" class="nav_link_estilo" routerLink fragment="evento" routerLinkActive="'active'"
+        <li id="link2" class="nav_links" routerLink fragment="evento" routerLinkActive="'active'"
+        [routerLinkActiveOptions]="{exact: true}"routerLink fragment="evento" routerLinkActive="'active'"
+        [routerLinkActiveOptions]="{exact: true}"><a  class="nav_link_estilo" routerLink fragment="evento" routerLinkActive="'active'"
           [routerLinkActiveOptions]="{exact: true}">Eventos</a></li>
         <!-- <li class="nav_links"><a class="nav_link_estilo" href="">Especialidades</a></li> -->
-        <li class="nav_links"><a id="link3" class="nav_link_estilo" routerLink fragment="historia" routerLinkActive="'active'"
+        <li id="link3" class="nav_links" routerLink fragment="historia" routerLinkActive="'active'"
+        [routerLinkActiveOptions]="{exact: true}"><a  class="nav_link_estilo" routerLink fragment="historia" routerLinkActive="'active'"
           [routerLinkActiveOptions]="{exact: true}">Historia</a></li>
       </ul>
       <!-- creamos la etiqueta a con una imagen dentro que nos llevara al home de la pagina web -->
@@ -20,7 +24,8 @@
       <!-- creamos una lista de items que seran los items que se encargaran de iniciar y cerrar sesion y administarla pagina -->
       <ul class="nav_administracion" >
         <li class="nav_links"><a class="nav_link_estilo" style="font-size:22px;" href=""><i class="fa-brands fa-github"></i></a></li>
-        <li class="nav_links"><a id="link4" class="nav_link_estilo" routerLink fragment="galeria" routerLinkActive="'active'"
+        <li  id="link4"  routerLink fragment="galeria" routerLinkActive="'active'"
+        [routerLinkActiveOptions]="{exact: true}" class="nav_links"><a class="nav_link_estilo" routerLink fragment="galeria" routerLinkActive="'active'"
           [routerLinkActiveOptions]="{exact: true}">Galería</a></li>
         <li class="nav_links nav_resposive_btn"><a id="link5" class="btn" routerLink fragment="login" routerLinkActive="'active'"
           [routerLinkActiveOptions]="{exact: true}">Iniciar Sesión</a></li>
