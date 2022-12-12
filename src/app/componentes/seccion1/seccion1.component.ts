@@ -20,7 +20,7 @@ export class Seccion1Component implements OnInit {
   seccionSeleccionada:Seccion1
   //declaramos la interfas
   secciones1!: Seccion1[];
-  displayModal:Boolean= false
+  modalVisible:Boolean= false
 
   @Input() admin:boolean=false;
   //creamos el controlador del formulario
@@ -47,7 +47,7 @@ export class Seccion1Component implements OnInit {
   mostrarEditar(seccionSeleccionada:Seccion1){
 
     this.seccionSeleccionada = seccionSeleccionada
-    this.displayModal= true
+    this.modalVisible= true
     this.actualizarSeccion.setValue({
       titulo: seccionSeleccionada.titulo,
       descripcion: seccionSeleccionada.descripcion,
@@ -92,9 +92,15 @@ export class Seccion1Component implements OnInit {
     })
 
    }
+
+   this.imagen = undefined;
+
+  //Y luego modificara el valor del modalVisible a false, para que el modal se cierre
+  this.modalVisible = false;
    
   }
 
+  
 
   //creamos el metodo "cargarImagen" para poder obtener la url y nombre de la imagen
   cargarImagen(event:any){
