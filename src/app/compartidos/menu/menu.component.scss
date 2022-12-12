@@ -189,9 +189,12 @@ la linea por el tecto*/
     header.abajo{
         background: #0A0D14;
         height: 55px;
-        padding:0 15px;
+        padding:0;
+        padding-left: 15px;
         transition: .5s;
-       
+       #logo{
+        margin-top: 5px;
+       }
     }
  
     /*La clase hara que el menu al ser desplegable, se pueda hacer
@@ -342,6 +345,7 @@ la linea por el tecto*/
         left: 0;
         transition: .2s;
     }
+
     .administracion{
         display: flex;
     }

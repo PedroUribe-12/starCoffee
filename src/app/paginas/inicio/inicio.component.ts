@@ -8,7 +8,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit{
 
-
   //datos que le van a dar a un componente que esta usando input
     titulo1:string="Comidas"
     eslogan1:string="Disfruto las mañanas con cafe"
