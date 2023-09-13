@@ -58,7 +58,7 @@ export class Seccion1Component implements OnInit {
   
   //creamos un meto para actualizar los datos cambiados
   actualizar(){
-    this.displayModal=false
+    this.modalVisible=false
     let nuevaSeccion:Seccion1= {
       titulo: this.actualizarSeccion.value.titulo!,
       descripcion: this.actualizarSeccion.value.descripcion!,
@@ -74,7 +74,7 @@ export class Seccion1Component implements OnInit {
         async url => {
           await this.servicioSeccion1.editarSeccion1(nuevaSeccion.idSeccion1, nuevaSeccion, url).then(sec=>{
             alert('Sección Actualizada')
-            this.displayModal=false
+            this.modalVisible=false
           })
           .catch(error=>{
             alert('ocurrió un error')
@@ -85,7 +85,7 @@ export class Seccion1Component implements OnInit {
    }else{
     this.servicioSeccion1.editarSeccion1(nuevaSeccion.idSeccion1, nuevaSeccion, ).then(sec=>{
       alert('Sección Actualizada sin imagen')
-      this.displayModal=false
+      this.modalVisible=false
     })
     .catch(error=>{
       alert('ocurrió un error\nError: ' + error)
